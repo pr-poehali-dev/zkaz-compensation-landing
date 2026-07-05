@@ -1,21 +1,24 @@
 import Icon from '@/components/ui/icon';
 
-const trust = [
-  '480 000–920 000 ₽ — средний размер взыскания',
-  '4–6 месяцев — средний срок выплаты',
-  '12,3 млн ₽ взыскано в 2024 году для 27 дольщиков',
+const stats = [
+  { value: '480–920 тыс. ₽', label: 'средний размер взыскания' },
+  { value: '4–6 мес.', label: 'средний срок выплаты' },
+  { value: '12,3 млн ₽', label: 'взыскали за 2024 год' },
 ];
 
 const steps = [
-  { icon: 'Search', text: 'Осматриваем квартиру и фиксируем дефекты — бесплатно' },
-  { icon: 'FileText', text: 'Готовим экспертизу и претензию — за наш счёт' },
-  { icon: 'Gavel', text: 'Взыскиваем деньги через суд — вы платите процент по факту' },
+  { icon: 'Search', title: 'Осмотр', text: 'Бесплатно фиксируем дефекты' },
+  { icon: 'FileText', title: 'Претензия', text: 'Экспертиза за наш счёт' },
+  { icon: 'Gavel', title: 'Суд', text: 'Ведём дело под ключ' },
+  { icon: 'Wallet', title: 'Выплата', text: 'Деньги вам, процент — нам' },
 ];
 
-const BG =
-  'https://cdn.poehali.dev/projects/bc95d7d2-5577-46ab-81ff-ded0d2e4bfc4/files/845d0cb4-2104-4951-9607-9189411fec59.jpg';
-const PHOTO =
-  'https://cdn.poehali.dev/projects/bc95d7d2-5577-46ab-81ff-ded0d2e4bfc4/bucket/781c8f3f-4aeb-4906-8fbe-a819800f524e.jpg';
+const guarantees = [
+  'Всё фиксируем в договоре',
+  'Ежемесячные отчёты по делу',
+  'Никаких скрытых платежей',
+  'Оплата только по результату',
+];
 
 const Flyer = () => {
   return (
@@ -29,72 +32,54 @@ const Flyer = () => {
         </button>
       </div>
 
-      <div className="flex justify-center">
-        <div className="a5-page relative overflow-hidden shadow-2xl">
-          <img src={BG} alt="" className="absolute inset-0 h-full w-full object-cover" />
-          <div className="absolute inset-0 bg-gradient-to-r from-navy-deep/95 via-navy-deep/85 to-navy-deep/40" />
-          <div className="absolute inset-0 bg-gradient-to-t from-navy-deep/90 via-transparent to-navy-deep/50" />
+      <div className="flex flex-col items-center gap-10">
+        {/* FRONT SIDE */}
+        <div className="a5-page relative overflow-hidden bg-navy-deep text-white shadow-2xl grain">
+          <div className="absolute -right-24 -top-24 h-72 w-72 rounded-full bg-navy-light/30 blur-3xl" />
+          <div className="absolute -bottom-24 -left-24 h-72 w-72 rounded-full bg-gold/10 blur-3xl" />
 
-          {/* decorative watermark icons */}
-          <Icon name="Scale" size={110} className="absolute -right-4 top-24 text-white/[0.06]" />
-          <Icon name="FileCheck2" size={90} className="absolute right-10 bottom-56 text-white/[0.05]" />
-          <Icon name="Clock" size={80} className="absolute right-2 bottom-16 text-white/[0.05]" />
-
-          <div className="relative flex h-full flex-col p-7 text-white">
-            {/* Logo */}
+          <div className="relative flex h-full flex-col p-8">
             <div className="flex items-center gap-2.5">
               <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-gold text-navy-deep">
                 <Icon name="Scale" size={20} />
               </div>
-              <span className="font-display text-base font-extrabold tracking-tight">
+              <span className="font-display text-lg font-extrabold tracking-tight">
                 Право<span className="text-gold">Дольщик</span>
               </span>
             </div>
 
-            {/* Photo top-right */}
-            <div className="absolute right-7 top-7 h-24 w-20 overflow-hidden rounded-xl border-2 border-gold/50 shadow-lg">
-              <img src={PHOTO} alt="Ваш юрист" className="h-full w-full object-cover" />
-            </div>
+            <span className="mt-8 inline-flex w-fit items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-1 text-[11px] font-semibold uppercase tracking-wider text-gold">
+              <Icon name="ShieldCheck" size={12} /> Без предоплаты
+            </span>
 
-            {/* Headline */}
-            <div className="mt-10 max-w-[75%]">
-              <span className="inline-flex items-center gap-1.5 rounded-full border border-gold/40 bg-gold/10 px-3 py-1 text-[10px] font-semibold uppercase tracking-wider text-gold">
-                <Icon name="ShieldCheck" size={11} /> Без предоплаты
-              </span>
-              <h1 className="mt-3 font-display text-[26px] font-black leading-[1.15]">
-                Компенсация за дефекты квартиры — без предоплаты
-              </h1>
-              <p className="mt-2 text-[13px] leading-snug text-white/75">
-                От 480 000 до 920 000 ₽ — оплата только по результату
-              </p>
-            </div>
+            <h1 className="mt-4 font-display text-[28px] font-black leading-[1.15]">
+              Взыщем компенсацию за дефекты вашей квартиры
+            </h1>
+            <p className="mt-3 text-sm leading-relaxed text-white/70">
+              От 480 000 до 920 000 ₽ с застройщика. Экспертизу и претензию берём на себя — вы платите процент только после выплаты.
+            </p>
 
-            {/* Trust block */}
-            <div className="mt-6 space-y-2 border-l-2 border-gold/50 pl-3">
-              {trust.map((t) => (
-                <p key={t} className="text-[13px] leading-snug text-white/85">{t}</p>
-              ))}
-            </div>
-
-            {/* Steps */}
-            <div className="mt-6 space-y-2.5">
-              {steps.map((s, i) => (
-                <div key={s.text} className="flex items-start gap-3 rounded-xl bg-white/[0.07] p-2.5">
-                  <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-gold text-sm font-bold text-navy-deep">
-                    {i + 1}
-                  </span>
-                  <p className="pt-0.5 text-[13px] leading-snug text-white/90">{s.text}</p>
+            <div className="mt-6 grid grid-cols-3 gap-2">
+              {stats.map((s) => (
+                <div key={s.label} className="rounded-xl bg-white/5 p-3 text-center">
+                  <p className="font-display text-lg font-black text-gold leading-tight">{s.value}</p>
+                  <p className="mt-1 text-[10px] leading-tight text-white/60">{s.label}</p>
                 </div>
               ))}
             </div>
 
-            {/* CTA + QR */}
-            <div className="mt-auto flex items-center justify-between gap-4 rounded-2xl bg-white/10 p-4 backdrop-blur-sm">
-              <div>
-                <p className="font-display text-sm font-bold text-gold">Рассчитайте компенсацию за 1 минуту</p>
-                <p className="mt-0.5 text-[11px] text-white/60">Наведите камеру на QR-код</p>
+            <div className="mt-8 rounded-2xl border border-gold/30 bg-gold/10 p-5">
+              <p className="font-display text-base font-bold text-gold">Реальный кейс</p>
+              <p className="mt-1 font-display text-2xl font-black">930 000 ₽</p>
+              <p className="mt-1 text-xs text-white/70">ЖК «Зелёный берег» · промерзание стен и плесень · 5 месяцев</p>
+            </div>
+
+            <div className="mt-auto flex items-center justify-between pt-8">
+              <div className="text-xs text-white/60">
+                <p className="font-display text-sm font-bold text-white">Рассчитайте сумму на сайте</p>
+                <p className="mt-0.5">Калькулятор неустойки за 1 минуту</p>
               </div>
-              <div className="flex h-[25mm] w-[25mm] shrink-0 items-center justify-center rounded-lg bg-white p-1.5">
+              <div className="flex h-16 w-16 items-center justify-center rounded-xl bg-white p-1.5">
                 <div className="grid h-full w-full grid-cols-5 grid-rows-5 gap-[2px]">
                   {Array.from({ length: 25 }).map((_, i) => (
                     <span key={i} className={`${[0,1,2,3,4,5,9,10,14,15,19,20,21,22,23,24,12].includes(i) ? 'bg-navy-deep' : ''} rounded-[1px]`} />
@@ -102,11 +87,60 @@ const Flyer = () => {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
 
-            {/* Contacts */}
-            <div className="mt-3 flex items-center justify-center gap-4 text-[11px] text-white/70">
-              <span className="flex items-center gap-1.5"><Icon name="Phone" size={13} className="text-gold" /> +7 (900) 000-00-00</span>
-              <span className="flex items-center gap-1.5"><Icon name="Send" size={13} className="text-gold" /> @pravo_dolshchik</span>
+        {/* BACK SIDE */}
+        <div className="a5-page relative overflow-hidden bg-background shadow-2xl">
+          <div className="flex h-full flex-col p-8">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-gold">Как мы работаем</p>
+            <h2 className="mt-2 font-display text-xl font-extrabold text-navy">Четыре шага до выплаты</h2>
+
+            <div className="mt-4 grid grid-cols-2 gap-3">
+              {steps.map((s, i) => (
+                <div key={s.title} className="rounded-xl border border-border bg-card p-3.5">
+                  <div className="flex items-center gap-2">
+                    <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-secondary text-navy">
+                      <Icon name={s.icon} size={15} />
+                    </span>
+                    <span className="font-display text-xs font-bold text-navy">{i + 1}. {s.title}</span>
+                  </div>
+                  <p className="mt-1.5 text-[11px] leading-snug text-muted-foreground">{s.text}</p>
+                </div>
+              ))}
+            </div>
+
+            <p className="mt-7 text-[11px] font-semibold uppercase tracking-[0.2em] text-gold">Гарантии</p>
+            <div className="mt-3 space-y-2">
+              {guarantees.map((g) => (
+                <div key={g} className="flex items-center gap-2.5">
+                  <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-navy text-white">
+                    <Icon name="Check" size={12} />
+                  </span>
+                  <span className="text-sm text-navy-light">{g}</span>
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-7 flex items-center gap-1 rounded-xl bg-navy-deep p-4 text-white grain">
+              <Icon name="Star" size={18} className="fill-gold text-gold" />
+              <p className="ml-1.5 font-display text-base font-bold">4,9</p>
+              <p className="ml-2 text-xs text-white/60">рейтинг на картах · 214 отзывов</p>
+            </div>
+
+            <div className="mt-auto space-y-2 border-t border-border pt-5">
+              <div className="flex items-center gap-2.5 text-sm text-navy">
+                <Icon name="Phone" size={16} className="text-navy" /> +7 (900) 000-00-00
+              </div>
+              <div className="flex items-center gap-2.5 text-sm text-navy">
+                <Icon name="Send" size={16} className="text-navy" /> @pravo_dolshchik
+              </div>
+              <div className="flex items-center gap-2.5 text-sm text-navy">
+                <Icon name="MapPin" size={16} className="text-navy" /> г. Москва, ул. Правовая, 1
+              </div>
+              <div className="flex items-center gap-2.5 text-sm text-navy">
+                <Icon name="Globe" size={16} className="text-navy" /> pravo-dolshchik.ru
+              </div>
             </div>
           </div>
         </div>
@@ -125,6 +159,7 @@ const Flyer = () => {
           .a5-page {
             border-radius: 0;
             box-shadow: none !important;
+            page-break-after: always;
             width: 148mm;
             height: 210mm;
           }
