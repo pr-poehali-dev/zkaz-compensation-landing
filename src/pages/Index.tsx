@@ -9,6 +9,7 @@ import Calculator from '@/components/landing/Calculator';
 import ChatHelper from '@/components/landing/ChatHelper';
 import MapBlock from '@/components/landing/MapBlock';
 import CasesSection from '@/components/landing/CasesSection';
+import LawyerBlock from '@/components/landing/LawyerBlock';
 
 const stats = [
   { value: '480–920 тыс. ₽', label: 'Средний размер взыскания на одного дольщика', icon: 'Banknote' },
@@ -131,6 +132,9 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      {/* Lawyer */}
+      <LawyerBlock />
 
       {/* How we work */}
       <section id="how" className="container py-20 md:py-24">

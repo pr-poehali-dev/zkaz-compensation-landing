@@ -48,13 +48,23 @@ const Flyer = () => {
               </span>
             </div>
 
-            <span className="mt-8 inline-flex w-fit items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-1 text-[11px] font-semibold uppercase tracking-wider text-gold">
-              <Icon name="ShieldCheck" size={12} /> Без предоплаты
-            </span>
-
-            <h1 className="mt-4 font-display text-[28px] font-black leading-[1.15]">
-              Взыщем компенсацию за дефекты вашей квартиры
-            </h1>
+            <div className="mt-8 flex gap-4">
+              <div className="flex-1">
+                <span className="inline-flex w-fit items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-1 text-[11px] font-semibold uppercase tracking-wider text-gold">
+                  <Icon name="ShieldCheck" size={12} /> Без предоплаты
+                </span>
+                <h1 className="mt-4 font-display text-[26px] font-black leading-[1.15]">
+                  Взыщем компенсацию за дефекты вашей квартиры
+                </h1>
+              </div>
+              <div className="relative h-28 w-24 shrink-0 overflow-hidden rounded-xl border border-white/15">
+                <img
+                  src="https://cdn.poehali.dev/projects/bc95d7d2-5577-46ab-81ff-ded0d2e4bfc4/bucket/781c8f3f-4aeb-4906-8fbe-a819800f524e.jpg"
+                  alt="Ваш юрист"
+                  className="h-full w-full object-cover"
+                />
+              </div>
+            </div>
             <p className="mt-3 text-sm leading-relaxed text-white/70">
               От 480 000 до 920 000 ₽ с застройщика. Экспертизу и претензию берём на себя — вы платите процент только после выплаты.
             </p>
