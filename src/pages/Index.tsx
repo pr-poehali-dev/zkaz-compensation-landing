@@ -8,6 +8,7 @@ import {
 import Calculator from '@/components/landing/Calculator';
 import ChatHelper from '@/components/landing/ChatHelper';
 import MapBlock from '@/components/landing/MapBlock';
+import CasesSection from '@/components/landing/CasesSection';
 
 const stats = [
   { value: '480–920 тыс. ₽', label: 'Средний размер взыскания на одного дольщика', icon: 'Banknote' },
@@ -20,21 +21,6 @@ const steps = [
   { icon: 'FileText', title: 'Экспертиза и претензия', text: 'Проводим за наш счёт, готовим документы' },
   { icon: 'Gavel', title: 'Суд', text: 'Ведём дело и защищаем ваши интересы' },
   { icon: 'Wallet', title: 'Выплаты', text: 'Вы получаете деньги, мы — процент' },
-];
-
-const cases = [
-  {
-    complex: 'ЖК «Северный»',
-    sum: '730 000 ₽',
-    term: '5 месяцев',
-    problem: 'Дефекты отделки и просрочка передачи квартиры на 4 месяца',
-  },
-  {
-    complex: 'ЖК «Зелёный берег»',
-    sum: '510 000 ₽',
-    term: '4 месяца',
-    problem: 'Промерзание наружных стен и нарушение теплоизоляции',
-  },
 ];
 
 const guarantees = [
@@ -170,33 +156,7 @@ const Index = () => {
       </section>
 
       {/* Cases */}
-      <section className="bg-navy-deep py-20 md:py-24 text-white grain">
-        <div className="container">
-          <div className="mx-auto mb-14 max-w-2xl text-center">
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-gold">Наши кейсы</p>
-            <h2 className="mt-3 font-display text-3xl font-extrabold md:text-4xl">Реальные суммы, реальные сроки</h2>
-          </div>
-          <div className="grid gap-6 md:grid-cols-2">
-            {cases.map((c) => (
-              <div key={c.complex} className="rounded-2xl border border-white/10 bg-white/5 p-8 backdrop-blur-sm">
-                <div className="flex items-start justify-between">
-                  <div>
-                    <p className="text-sm text-white/60">{c.complex}</p>
-                    <p className="mt-1 font-display text-4xl font-black text-gold">{c.sum}</p>
-                  </div>
-                  <span className="rounded-full bg-white/10 px-3 py-1 text-xs font-medium">{c.term}</span>
-                </div>
-                <p className="mt-5 text-white/75">{c.problem}</p>
-              </div>
-            ))}
-          </div>
-          <div className="mt-10 text-center">
-            <button className="inline-flex items-center gap-2 rounded-lg border border-white/20 px-6 py-3 font-semibold transition hover:bg-white/10">
-              Смотреть все кейсы <Icon name="ArrowRight" size={18} />
-            </button>
-          </div>
-        </div>
-      </section>
+      <CasesSection />
 
       {/* Guarantees */}
       <section className="container py-20 md:py-24">
