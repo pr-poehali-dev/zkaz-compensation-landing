@@ -107,8 +107,21 @@ const Flyer = () => {
               ))}
             </div>
 
+            {/* Rating + address */}
+            <div className="mt-6 flex items-center justify-between gap-3 rounded-xl bg-white/5 px-3.5 py-2.5">
+              <div className="flex items-center gap-1.5">
+                <Icon name="Star" size={14} className="fill-gold text-gold" />
+                <span className="font-display text-[12px] font-bold text-gold">4,9</span>
+                <span className="text-[10px] text-white/50">· 214 отзывов на картах</span>
+              </div>
+              <div className="flex items-center gap-1.5 text-[10px] text-white/60">
+                <Icon name="MapPin" size={12} className="text-gold" />
+                г. Москва, ул. Правовая, 1
+              </div>
+            </div>
+
             {/* CTA + QR */}
-            <div className="mt-auto flex items-center justify-between gap-4 rounded-2xl bg-white/10 p-4 backdrop-blur-sm">
+            <div className="mt-3 flex items-center justify-between gap-4 rounded-2xl bg-white/10 p-4 backdrop-blur-sm">
               <div>
                 <p className="font-display text-sm font-bold text-gold">Рассчитать компенсацию за 1 минуту</p>
                 <p className="mt-1 text-[11px] text-white/60">Или позвоните: +7 (995) 440-77-50</p>
@@ -166,6 +179,14 @@ const Flyer = () => {
               <p className="text-[11px] text-white/70">
                 Или отсканируйте QR с лицевой стороны, чтобы рассчитать компенсацию за 1 минуту.
               </p>
+              <div className="flex items-center justify-between border-t border-white/10 pt-2 text-[10px] text-white/60">
+                <span className="flex items-center gap-1.5">
+                  <Icon name="Star" size={12} className="fill-gold text-gold" /> 4,9 · 214 отзывов
+                </span>
+                <span className="flex items-center gap-1.5">
+                  <Icon name="MapPin" size={12} className="text-gold" /> г. Москва, ул. Правовая, 1
+                </span>
+              </div>
             </div>
 
             <p className="mt-3 text-center text-[9px] leading-snug text-muted-foreground">ПравоДольщик · © 2026 · Все права защищены</p>
