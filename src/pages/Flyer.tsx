@@ -73,14 +73,12 @@ const Flyer = () => {
             </div>
 
             {/* Headline */}
-            <h1 className="mt-6 text-center font-display text-[25px] font-black leading-[1.15]">
-              Взыщем компенсацию за дефекты квартиры — без предоплаты
-            </h1>
+            <h1 className="mt-6 text-center font-display text-[25px] font-black leading-[1.15]">Взыщем компенсацию с застройщика за дефекты квартиры — без предоплаты</h1>
 
             {/* Stats */}
             <div className="mt-5 grid grid-cols-2 gap-2.5">
               <div className="rounded-xl bg-white/5 p-3 text-center">
-                <p className="font-display text-base font-black leading-tight text-gold">480 000–920 000 ₽</p>
+                <p className="font-display text-base font-black leading-tight text-gold">280 000–560 000 ₽</p>
                 <p className="mt-1 text-[10px] text-white/60">средний размер взыскания</p>
               </div>
               <div className="rounded-xl bg-white/5 p-3 text-center">
@@ -94,9 +92,7 @@ const Flyer = () => {
               <div className="h-24 w-20 shrink-0 overflow-hidden rounded-xl border-2 border-gold/50">
                 <img src={PHOTO} alt="Юрист" className="h-full w-full object-cover" />
               </div>
-              <p className="text-[12px] leading-snug text-white/85">
-                Я юрист. Расскажу про ваши шансы за 10 минут на бесплатной консультации. Работаю за процент от результата — вы ничего не платите заранее.
-              </p>
+              <p className="text-[12px] leading-snug text-white/85 mx-0 px-0 py-0 my-0 text-center">Меня зовут Рустам. Я расскажу про ваши шансы за 10 минут на бесплатной консультации.</p>
             </div>
 
             {/* How it works */}
@@ -115,7 +111,7 @@ const Flyer = () => {
             <div className="mt-auto flex items-center justify-between gap-4 rounded-2xl bg-white/10 p-4 backdrop-blur-sm">
               <div>
                 <p className="font-display text-sm font-bold text-gold">Рассчитать компенсацию за 1 минуту</p>
-                <p className="mt-1 text-[11px] text-white/60">Или позвоните: +7 (900) 000-00-00</p>
+                <p className="mt-1 text-[11px] text-white/60">Или позвоните: +7 (995) 440-77-50</p>
                 <p className="text-[11px] text-white/60">WhatsApp / Telegram: @pravo_dolshchik</p>
               </div>
               <div className="flex h-[25mm] w-[25mm] shrink-0 items-center justify-center rounded-lg bg-white p-1.5">
@@ -166,9 +162,7 @@ const Flyer = () => {
             </div>
 
             <div className="mt-auto space-y-2 rounded-2xl bg-navy-deep p-4 text-white grain">
-              <p className="font-display text-sm font-bold text-gold">
-                Позвоните или напишите: +7 (900) 000-00-00 / @pravo_dolshchik
-              </p>
+              <p className="font-display text-sm font-bold text-gold">Позвоните или напишите: +7 (995) 440-77-50 / @pravo_dolshchik</p>
               <p className="text-[11px] text-white/70">
                 Или отсканируйте QR с лицевой стороны, чтобы рассчитать компенсацию за 1 минуту.
               </p>
