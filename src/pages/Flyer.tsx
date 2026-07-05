@@ -1,24 +1,47 @@
 import Icon from '@/components/ui/icon';
 
-const stats = [
-  { value: '480–920 тыс. ₽', label: 'средний размер взыскания' },
-  { value: '4–6 мес.', label: 'средний срок выплаты' },
-  { value: '12,3 млн ₽', label: 'взыскали за 2024 год' },
+const howItWorks = [
+  { icon: 'FileText', text: 'Осмотр и консультация — бесплатно' },
+  { icon: 'Scale', text: 'Экспертиза и претензия — за наш счёт' },
+  { icon: 'Wallet', text: 'Вы получаете деньги, мы берём процент' },
 ];
 
-const steps = [
-  { icon: 'Search', title: 'Осмотр', text: 'Бесплатно фиксируем дефекты' },
-  { icon: 'FileText', title: 'Претензия', text: 'Экспертиза за наш счёт' },
-  { icon: 'Gavel', title: 'Суд', text: 'Ведём дело под ключ' },
-  { icon: 'Wallet', title: 'Выплата', text: 'Деньги вам, процент — нам' },
+const caseCards = [
+  {
+    icon: 'ThermometerSnowflake',
+    title: 'Промерзание стен и плесень',
+    sum: 'до 930 000 ₽',
+    text: 'Доказываем через тепловизор и акт осмотра. Застройщик не может свалить на «неправильную эксплуатацию».',
+  },
+  {
+    icon: 'AppWindow',
+    title: 'Окна продуваются, конденсат',
+    sum: 'до 730 000 ₽',
+    text: 'Фиксируем отклонения по ГОСТ. Считаем полную замену окон и неустойку.',
+  },
+  {
+    icon: 'LayoutPanelTop',
+    title: 'Трещины и «бухтение» стяжки пола',
+    sum: 'до 400 000 ₽',
+    text: 'Инструментальное обследование, расчёт демонтажа и новой стяжки.',
+  },
+  {
+    icon: 'CalendarClock',
+    title: 'Просрочка сдачи + дефекты отделки',
+    sum: 'до 975 000 ₽',
+    text: 'Комплексная претензия: неустойка по ФЗ-214 + стоимость ремонта.',
+  },
 ];
 
-const guarantees = [
-  'Всё фиксируем в договоре',
-  'Ежемесячные отчёты по делу',
-  'Никаких скрытых платежей',
-  'Оплата только по результату',
+const faq = [
+  { q: 'А если суд откажет?', a: 'Мы работаем по результату. Если ничего не получится — вы ничего не платите.' },
+  { q: 'Нужны ли мои деньги на старте?', a: 'Нет. Экспертиза, претензия, почтовые расходы — за наш счёт.' },
+  { q: 'Как я буду в курсе?', a: 'Раз в месяц присылаем отчёт: что сделано, какие сроки, что дальше.' },
+  { q: 'Сколько времени займёт?', a: 'В среднем 4–6 месяцев от первого осмотра до получения денег.' },
 ];
+
+const PHOTO =
+  'https://cdn.poehali.dev/projects/bc95d7d2-5577-46ab-81ff-ded0d2e4bfc4/bucket/781c8f3f-4aeb-4906-8fbe-a819800f524e.jpg';
 
 const Flyer = () => {
   return (
@@ -38,58 +61,64 @@ const Flyer = () => {
           <div className="absolute -right-24 -top-24 h-72 w-72 rounded-full bg-navy-light/30 blur-3xl" />
           <div className="absolute -bottom-24 -left-24 h-72 w-72 rounded-full bg-gold/10 blur-3xl" />
 
-          <div className="relative flex h-full flex-col p-8">
+          <div className="relative flex h-full flex-col p-7">
+            {/* Logo */}
             <div className="flex items-center gap-2.5">
-              <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-gold text-navy-deep">
-                <Icon name="Scale" size={20} />
+              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gold text-navy-deep">
+                <Icon name="Scale" size={18} />
               </div>
-              <span className="font-display text-lg font-extrabold tracking-tight">
+              <span className="font-display text-sm font-extrabold tracking-tight">
                 Право<span className="text-gold">Дольщик</span>
               </span>
             </div>
 
-            <div className="mt-8 flex gap-4">
-              <div className="flex-1">
-                <span className="inline-flex w-fit items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-1 text-[11px] font-semibold uppercase tracking-wider text-gold">
-                  <Icon name="ShieldCheck" size={12} /> Без предоплаты
-                </span>
-                <h1 className="mt-4 font-display text-[26px] font-black leading-[1.15]">
-                  Взыщем компенсацию за дефекты вашей квартиры
-                </h1>
+            {/* Headline */}
+            <h1 className="mt-6 text-center font-display text-[25px] font-black leading-[1.15]">
+              Взыщем компенсацию за дефекты квартиры — без предоплаты
+            </h1>
+
+            {/* Stats */}
+            <div className="mt-5 grid grid-cols-2 gap-2.5">
+              <div className="rounded-xl bg-white/5 p-3 text-center">
+                <p className="font-display text-base font-black leading-tight text-gold">480 000–920 000 ₽</p>
+                <p className="mt-1 text-[10px] text-white/60">средний размер взыскания</p>
               </div>
-              <div className="relative h-28 w-24 shrink-0 overflow-hidden rounded-xl border border-white/15">
-                <img
-                  src="https://cdn.poehali.dev/projects/bc95d7d2-5577-46ab-81ff-ded0d2e4bfc4/bucket/781c8f3f-4aeb-4906-8fbe-a819800f524e.jpg"
-                  alt="Ваш юрист"
-                  className="h-full w-full object-cover"
-                />
+              <div className="rounded-xl bg-white/5 p-3 text-center">
+                <p className="font-display text-base font-black leading-tight text-gold">4–6 месяцев</p>
+                <p className="mt-1 text-[10px] text-white/60">средний срок</p>
               </div>
             </div>
-            <p className="mt-3 text-sm leading-relaxed text-white/70">
-              От 480 000 до 920 000 ₽ с застройщика. Экспертизу и претензию берём на себя — вы платите процент только после выплаты.
-            </p>
 
-            <div className="mt-6 grid grid-cols-3 gap-2">
-              {stats.map((s) => (
-                <div key={s.label} className="rounded-xl bg-white/5 p-3 text-center">
-                  <p className="font-display text-lg font-black text-gold leading-tight">{s.value}</p>
-                  <p className="mt-1 text-[10px] leading-tight text-white/60">{s.label}</p>
+            {/* Photo + signature */}
+            <div className="mt-6 flex items-center gap-4 rounded-2xl bg-white/5 p-4">
+              <div className="h-24 w-20 shrink-0 overflow-hidden rounded-xl border-2 border-gold/50">
+                <img src={PHOTO} alt="Юрист" className="h-full w-full object-cover" />
+              </div>
+              <p className="text-[12px] leading-snug text-white/85">
+                Я юрист. Расскажу про ваши шансы за 10 минут на бесплатной консультации. Работаю за процент от результата — вы ничего не платите заранее.
+              </p>
+            </div>
+
+            {/* How it works */}
+            <div className="mt-6 space-y-2.5">
+              {howItWorks.map((s) => (
+                <div key={s.text} className="flex items-center gap-3 rounded-xl bg-white/[0.07] p-2.5">
+                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-gold text-navy-deep">
+                    <Icon name={s.icon} size={16} />
+                  </span>
+                  <p className="text-[12.5px] leading-snug text-white/90">{s.text}</p>
                 </div>
               ))}
             </div>
 
-            <div className="mt-8 rounded-2xl border border-gold/30 bg-gold/10 p-5">
-              <p className="font-display text-base font-bold text-gold">Реальный кейс</p>
-              <p className="mt-1 font-display text-2xl font-black">930 000 ₽</p>
-              <p className="mt-1 text-xs text-white/70">ЖК «Зелёный берег» · промерзание стен и плесень · 5 месяцев</p>
-            </div>
-
-            <div className="mt-auto flex items-center justify-between pt-8">
-              <div className="text-xs text-white/60">
-                <p className="font-display text-sm font-bold text-white">Рассчитайте сумму на сайте</p>
-                <p className="mt-0.5">Калькулятор неустойки за 1 минуту</p>
+            {/* CTA + QR */}
+            <div className="mt-auto flex items-center justify-between gap-4 rounded-2xl bg-white/10 p-4 backdrop-blur-sm">
+              <div>
+                <p className="font-display text-sm font-bold text-gold">Рассчитать компенсацию за 1 минуту</p>
+                <p className="mt-1 text-[11px] text-white/60">Или позвоните: +7 (900) 000-00-00</p>
+                <p className="text-[11px] text-white/60">WhatsApp / Telegram: @pravo_dolshchik</p>
               </div>
-              <div className="flex h-16 w-16 items-center justify-center rounded-xl bg-white p-1.5">
+              <div className="flex h-[25mm] w-[25mm] shrink-0 items-center justify-center rounded-lg bg-white p-1.5">
                 <div className="grid h-full w-full grid-cols-5 grid-rows-5 gap-[2px]">
                   {Array.from({ length: 25 }).map((_, i) => (
                     <span key={i} className={`${[0,1,2,3,4,5,9,10,14,15,19,20,21,22,23,24,12].includes(i) ? 'bg-navy-deep' : ''} rounded-[1px]`} />
@@ -97,61 +126,57 @@ const Flyer = () => {
                 </div>
               </div>
             </div>
+
+            <p className="mt-3 text-center text-[9px] leading-snug text-white/40">
+              Результаты индивидуальны. Не является публичной офертой. Данные обезличены в соответствии с 152-ФЗ.
+            </p>
           </div>
         </div>
 
         {/* BACK SIDE */}
         <div className="a5-page relative overflow-hidden bg-background shadow-2xl">
-          <div className="flex h-full flex-col p-8">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-gold">Как мы работаем</p>
-            <h2 className="mt-2 font-display text-xl font-extrabold text-navy">Четыре шага до выплаты</h2>
+          <div className="flex h-full flex-col p-7">
+            <h2 className="text-center font-display text-lg font-extrabold leading-snug text-navy">
+              Какие дефекты реально компенсируют — и сколько денег можно получить
+            </h2>
 
-            <div className="mt-4 grid grid-cols-2 gap-3">
-              {steps.map((s, i) => (
-                <div key={s.title} className="rounded-xl border border-border bg-card p-3.5">
+            <div className="mt-5 grid grid-cols-2 gap-2.5">
+              {caseCards.map((c) => (
+                <div key={c.title} className="rounded-xl border border-border bg-card p-3">
                   <div className="flex items-center gap-2">
-                    <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-secondary text-navy">
-                      <Icon name={s.icon} size={15} />
+                    <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-secondary text-navy">
+                      <Icon name={c.icon} size={15} />
                     </span>
-                    <span className="font-display text-xs font-bold text-navy">{i + 1}. {s.title}</span>
+                    <p className="font-display text-[11px] font-bold leading-tight text-navy">{c.title}</p>
                   </div>
-                  <p className="mt-1.5 text-[11px] leading-snug text-muted-foreground">{s.text}</p>
+                  <p className="mt-1.5 font-display text-sm font-black text-gold">{c.sum}</p>
+                  <p className="mt-1 text-[10px] leading-snug text-muted-foreground">{c.text}</p>
                 </div>
               ))}
             </div>
 
-            <p className="mt-7 text-[11px] font-semibold uppercase tracking-[0.2em] text-gold">Гарантии</p>
-            <div className="mt-3 space-y-2">
-              {guarantees.map((g) => (
-                <div key={g} className="flex items-center gap-2.5">
-                  <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-navy text-white">
-                    <Icon name="Check" size={12} />
-                  </span>
-                  <span className="text-sm text-navy-light">{g}</span>
+            <p className="mt-6 text-[11px] font-semibold uppercase tracking-[0.2em] text-gold">Частые вопросы</p>
+            <div className="mt-2.5 space-y-2">
+              {faq.map((f) => (
+                <div key={f.q} className="rounded-xl bg-secondary/60 p-2.5">
+                  <p className="font-display text-[12px] font-bold text-navy">{f.q}</p>
+                  <p className="mt-0.5 text-[11px] leading-snug text-muted-foreground">{f.a}</p>
                 </div>
               ))}
             </div>
 
-            <div className="mt-7 flex items-center gap-1 rounded-xl bg-navy-deep p-4 text-white grain">
-              <Icon name="Star" size={18} className="fill-gold text-gold" />
-              <p className="ml-1.5 font-display text-base font-bold">4,9</p>
-              <p className="ml-2 text-xs text-white/60">рейтинг на картах · 214 отзывов</p>
+            <div className="mt-auto space-y-2 rounded-2xl bg-navy-deep p-4 text-white grain">
+              <p className="font-display text-sm font-bold text-gold">
+                Позвоните или напишите: +7 (900) 000-00-00 / @pravo_dolshchik
+              </p>
+              <p className="text-[11px] text-white/70">
+                Или отсканируйте QR с лицевой стороны, чтобы рассчитать компенсацию за 1 минуту.
+              </p>
             </div>
 
-            <div className="mt-auto space-y-2 border-t border-border pt-5">
-              <div className="flex items-center gap-2.5 text-sm text-navy">
-                <Icon name="Phone" size={16} className="text-navy" /> +7 (900) 000-00-00
-              </div>
-              <div className="flex items-center gap-2.5 text-sm text-navy">
-                <Icon name="Send" size={16} className="text-navy" /> @pravo_dolshchik
-              </div>
-              <div className="flex items-center gap-2.5 text-sm text-navy">
-                <Icon name="MapPin" size={16} className="text-navy" /> г. Москва, ул. Правовая, 1
-              </div>
-              <div className="flex items-center gap-2.5 text-sm text-navy">
-                <Icon name="Globe" size={16} className="text-navy" /> pravo-dolshchik.ru
-              </div>
-            </div>
+            <p className="mt-3 text-center text-[9px] leading-snug text-muted-foreground">
+              ИП ПравоДольщик · © 2024 · Все права защищены
+            </p>
           </div>
         </div>
       </div>
