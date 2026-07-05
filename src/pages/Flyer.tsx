@@ -108,7 +108,7 @@ const Flyer = () => {
             </div>
 
             {/* Rating + address */}
-            <div className="mt-6 flex items-center justify-between gap-3 rounded-xl bg-white/5 px-3.5 py-2.5">
+            <div className="flex items-center justify-between gap-3 bg-white/5 py-2.5 my-3 rounded-xl mx-0 px-3">
               <div className="flex items-center gap-1.5">
                 <Icon name="Star" size={14} className="fill-gold text-gold" />
                 <span className="font-display text-[12px] font-bold text-gold">4,9</span>
@@ -121,7 +121,7 @@ const Flyer = () => {
             </div>
 
             {/* CTA + QR */}
-            <div className="mt-3 flex items-center justify-between gap-4 rounded-2xl bg-white/10 p-4 backdrop-blur-sm">
+            <div className="flex items-center justify-between gap-4 rounded-2xl bg-white/10 p-4 backdrop-blur-sm my-0 py-0">
               <div>
                 <p className="font-display text-sm font-bold text-gold">Рассчитать компенсацию за 1 минуту</p>
                 <p className="mt-1 text-[11px] text-white/60">Или позвоните: +7 (995) 440-77-50</p>
