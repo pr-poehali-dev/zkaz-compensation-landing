@@ -7,6 +7,7 @@ import {
 } from '@/components/ui/accordion';
 import Calculator from '@/components/landing/Calculator';
 import ChatHelper from '@/components/landing/ChatHelper';
+import MapBlock from '@/components/landing/MapBlock';
 
 const stats = [
   { value: '480–920 тыс. ₽', label: 'Средний размер взыскания на одного дольщика', icon: 'Banknote' },
@@ -235,6 +236,9 @@ const Index = () => {
           </Accordion>
         </div>
       </section>
+
+      {/* Map & rating */}
+      <MapBlock />
 
       {/* CTA */}
       <section className="bg-navy-deep py-20 text-center text-white grain">
