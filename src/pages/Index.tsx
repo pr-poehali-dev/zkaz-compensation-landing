@@ -218,8 +218,7 @@ const Index = () => {
               <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-navy text-white">
                 <Icon name="Scale" size={20} />
               </div>
-              <span className="font-display text-lg font-extrabold text-navy">
-                Право<span className="text-gold">Дольщик</span>
+              <span className="font-display text-lg font-extrabold text-navy my-[3px]">Региональный центр защиты прав потребителей</span>
               </span>
             </div>
             <p className="mt-4 max-w-xs text-sm text-muted-foreground">
