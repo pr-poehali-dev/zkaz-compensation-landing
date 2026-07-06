@@ -68,7 +68,7 @@ const Flyer = () => {
                 <Icon name="Scale" size={18} />
               </div>
               <span className="font-display text-sm font-extrabold tracking-tight">
-                Право<span className="text-gold">Дольщик</span>
+                Региональный центр <span className="text-gold">защиты прав потребителей</span>
               </span>
             </div>
 
