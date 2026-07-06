@@ -203,7 +203,7 @@ const Index = () => {
       <section className="bg-navy-deep py-20 text-center text-white grain">
         <div className="container max-w-2xl">
           <h2 className="font-display text-3xl font-extrabold md:text-4xl">Готовы узнать свою сумму?</h2>
-          <p className="mt-4 text-white/70">Бесплатный осмотр и расчёт. </p>
+          <p className="mt-4 text-white/70">Бесплатный осмотр и расчёт</p>
           <a href="#calc" className="mt-8 inline-flex items-center justify-center gap-2 rounded-lg bg-gold px-8 py-4 font-display text-base font-bold text-navy-deep transition hover:brightness-110">
             <Icon name="Calculator" size={20} /> Рассчитать компенсацию
           </a>
