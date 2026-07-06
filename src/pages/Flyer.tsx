@@ -169,7 +169,9 @@ const Flyer = () => {
                 Или отсканируйте QR с лицевой стороны, чтобы рассчитать компенсацию за 1 минуту.
               </p>
               <div className="flex items-center justify-between border-t border-white/10 pt-2 text-[10px] text-white/60">
-                <span className="flex items-center gap-1.5">5,0 · 214 отзывов</span>
+                <span className="flex items-center gap-1.5">
+                  <Icon name="Star" size={12} className="fill-gold text-gold" /> 5,0 · 214 отзывов
+                </span>
                 <span className="flex items-center gap-1.5">
                   <Icon name="MapPin" size={12} className="text-gold" /> г. Красноярск, ул. Красной Гвардии, д. 21
                 </span>
