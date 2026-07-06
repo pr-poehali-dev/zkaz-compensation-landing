@@ -2,9 +2,9 @@ import Icon from '@/components/ui/icon';
 
 const managers = [
   {
-    photo: 'https://cdn.poehali.dev/projects/bc95d7d2-5577-46ab-81ff-ded0d2e4bfc4/files/8bd9aacf-0345-4ad9-b039-ccf761761af3.jpg',
-    name: 'Анна Соколова',
-    role: 'Ведущий менеджер по работе с клиентами',
+    photo: 'https://cdn.poehali.dev/projects/bc95d7d2-5577-46ab-81ff-ded0d2e4bfc4/bucket/e1f08289-a9fc-4e06-89af-03dd3546bbb8.jpeg',
+    name: 'Николай Коновалов',
+    role: 'Менеджер по работе с клиентами',
     text: 'С первого звонка сопровождаю вас лично: собираю документы, слежу за сроками и держу в курсе каждого этапа.',
   },
   {
