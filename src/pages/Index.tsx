@@ -84,9 +84,7 @@ const Index = () => {
             <h1 className="mt-6 font-display text-4xl font-black leading-[1.1] text-balance md:text-6xl animate-slide-up">
               Взыщем компенсацию за дефекты вашей квартиры
             </h1>
-            <p className="mt-6 max-w-xl text-lg text-white/70 animate-fade-in" style={{ animationDelay: '0.15s', opacity: 0 }}>
-              От 480 000 до 920 000 ₽ с застройщика — без предоплаты. Экспертизу и претензию берём на себя, вы платите процент только после выплаты.
-            </p>
+            <p className="mt-6 max-w-xl text-lg text-white/70 animate-fade-in" style={{ animationDelay: '0.15s', opacity: 0 }}>От 250 000 до 700 000 ₽ с застройщика — без предоплаты. Экспертизу и претензию берём на себя, вы платите процент только после выплаты.</p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row animate-fade-in" style={{ animationDelay: '0.3s', opacity: 0 }}>
               <a href="#calc" className="inline-flex items-center justify-center gap-2 rounded-lg bg-gold px-7 py-4 font-display text-base font-bold text-navy-deep transition hover:brightness-110">
                 <Icon name="Calculator" size={20} /> Рассчитать за 1 минуту
