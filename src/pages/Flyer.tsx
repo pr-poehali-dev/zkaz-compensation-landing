@@ -113,7 +113,7 @@ const Flyer = () => {
             </div>
 
             {/* CTA + QR */}
-            <div className="flex items-center justify-between gap-4 rounded-2xl bg-white/10 p-4 backdrop-blur-sm my-2.5 px-[13px] py-[19px]">
+            <div className="flex items-center justify-between gap-4 rounded-2xl bg-white/10 p-4 my-2.5 px-[13px] py-[19px]">
               <div>
                 <p className="font-display text-sm font-bold text-gold">Рассчитать компенсацию за 1 минуту</p>
                 <p className="mt-1 text-[11px] text-white/60">Или позвоните: +7 (995) 440-77-50 ; +7 (960) 772-48-88 </p>
