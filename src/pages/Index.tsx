@@ -219,7 +219,6 @@ const Index = () => {
                 <Icon name="Scale" size={20} />
               </div>
               <span className="font-display text-lg font-extrabold text-navy my-[3px]">Региональный центр защиты прав потребителей</span>
-              </span>
             </div>
             <p className="mt-4 max-w-xs text-sm text-muted-foreground">
               Взыскиваем компенсации за дефекты и просрочку с застройщиков. Оплата только по результату.
