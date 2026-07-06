@@ -184,7 +184,7 @@ const Flyer = () => {
                   <Icon name="Star" size={12} className="fill-gold text-gold" /> 4,9 · 214 отзывов
                 </span>
                 <span className="flex items-center gap-1.5">
-                  <Icon name="MapPin" size={12} className="text-gold" /> г. Москва, ул. Правовая, 1
+                  <Icon name="MapPin" size={12} className="text-gold" /> г. Красноярск, ул. Красной Гвардии, д. 21
                 </span>
               </div>
             </div>
