@@ -245,7 +245,7 @@ const Index = () => {
             </div>
             <div className="mt-6 space-y-1 text-xs text-muted-foreground">
               <a href="#" className="block hover:text-navy">Политика конфиденциальности</a>
-              <p>© 2024 ПравоДольщик. Все права защищены.</p>
+              <p>© 2026 Региональный центр защиты прав потребителей. Все права защищены.</p>
             </div>
           </div>
         </div>
