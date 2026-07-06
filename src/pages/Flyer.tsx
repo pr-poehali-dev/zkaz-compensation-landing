@@ -78,7 +78,7 @@ const Flyer = () => {
             {/* Stats */}
             <div className="mt-5 grid grid-cols-2 gap-2.5">
               <div className="rounded-xl bg-white/5 p-3 text-center">
-                <p className="font-display text-base font-black leading-tight text-gold">280 000–560 000 ₽</p>
+                <p className="font-display text-base font-black leading-tight text-gold">250 000–700 000 ₽</p>
                 <p className="mt-1 text-[10px] text-white/60">средний размер взыскания</p>
               </div>
               <div className="rounded-xl bg-white/5 p-3 text-center">
@@ -113,11 +113,11 @@ const Flyer = () => {
             </div>
 
             {/* CTA + QR */}
-            <div className="flex items-center justify-between gap-4 rounded-2xl bg-white/10 p-4 backdrop-blur-sm my-0 py-0">
+            <div className="flex items-center justify-between gap-4 rounded-2xl bg-white/10 p-4 backdrop-blur-sm my-2.5 px-[13px] py-[19px]">
               <div>
                 <p className="font-display text-sm font-bold text-gold">Рассчитать компенсацию за 1 минуту</p>
-                <p className="mt-1 text-[11px] text-white/60">Или позвоните: +7 (995) 440-77-50</p>
-                <p className="text-[11px] text-white/60">WhatsApp / Telegram: @pravo_dolshchik</p>
+                <p className="mt-1 text-[11px] text-white/60">Или позвоните: +7 (995) 440-77-50 ; +7 (960) 772-48-88 </p>
+                <p className="text-[11px] text-white/60">WhatsApp / Telegram: @pravo2026</p>
               </div>
               <div className="flex h-[25mm] w-[25mm] shrink-0 items-center justify-center rounded-lg bg-white p-1.5">
                 <img src={QR_CODE_URL} alt="QR-код на сайт" className="h-full w-full object-contain" />
@@ -162,7 +162,7 @@ const Flyer = () => {
               ))}
             </div>
 
-            <div className="mt-auto space-y-2 rounded-2xl bg-navy-deep p-4 text-white grain">
+            <div className="space-y-2 rounded-2xl bg-navy-deep p-4 text-white grain my-0">
               <p className="font-display text-sm font-bold text-gold">Позвоните или напишите: +7 (995) 440-77-50 / @pravo_dolshchik</p>
               <p className="text-[11px] text-white/70">
                 Или отсканируйте QR с лицевой стороны, чтобы рассчитать компенсацию за 1 минуту.
