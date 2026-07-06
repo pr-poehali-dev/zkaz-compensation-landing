@@ -64,7 +64,7 @@ const Index = () => {
             <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-navy text-white">
               <Icon name="Scale" size={20} />
             </div>
-            <span className="font-display text-lg font-extrabold tracking-tight text-navy">Региональный центр по защите прав потребителей </span>
+            <span className="font-display text-lg font-extrabold tracking-tight text-navy">Региональный центр защиты прав потребителей</span>
           </div>
           <a href="#calc" className="hidden rounded-lg bg-navy px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-navy-deep sm:inline-block">
             Рассчитать компенсацию
