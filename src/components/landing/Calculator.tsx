@@ -17,8 +17,8 @@ const DEFECTS_CAP_RATE = 0.06;
 
 const Calculator = () => {
   const [price, setPrice] = useState<number>(6500000);
-  const [plannedDate, setPlannedDate] = useState<string>('2024-06-30');
-  const [factDate, setFactDate] = useState<string>('2024-12-15');
+  const [plannedDate, setPlannedDate] = useState<string>('');
+  const [factDate, setFactDate] = useState<string>('');
   const [rooms, setRooms] = useState<number>(2);
   const [windows, setWindows] = useState<number>(3);
   const [area, setArea] = useState<number>(55);
