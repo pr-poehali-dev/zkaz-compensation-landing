@@ -10,9 +10,9 @@ const daysBetween = (a: string, b: string) => {
   return Math.max(0, Math.floor(d));
 };
 
-const PRICE_PER_ROOM = 18750;
-const PRICE_PER_WINDOW = 10000;
-const PRICE_PER_SQM = 1875;
+const PRICE_PER_ROOM = 30000;
+const PRICE_PER_WINDOW = 16000;
+const PRICE_PER_SQM = 3000;
 const DEFECTS_CAP_RATE = 0.06;
 
 const Calculator = () => {
