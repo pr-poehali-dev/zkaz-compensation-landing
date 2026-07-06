@@ -10,22 +10,32 @@ const daysBetween = (a: string, b: string) => {
   return Math.max(0, Math.floor(d));
 };
 
+const PRICE_PER_ROOM = 15000;
+const PRICE_PER_WINDOW = 8000;
+const PRICE_PER_SQM = 1500;
+const DEFECTS_CAP_RATE = 0.03;
+
 const Calculator = () => {
   const [price, setPrice] = useState<number>(6500000);
   const [plannedDate, setPlannedDate] = useState<string>('2024-06-30');
   const [factDate, setFactDate] = useState<string>('2024-12-15');
+  const [rooms, setRooms] = useState<number>(2);
+  const [windows, setWindows] = useState<number>(3);
+  const [area, setArea] = useState<number>(55);
 
   const result = useMemo(() => {
     const days = daysBetween(plannedDate, factDate);
     const keyRate = 0.16;
     const penalty = price * (1 / 300) * keyRate * days * 2;
-    const defects = price * 0.06;
+    const defectsCap = price * DEFECTS_CAP_RATE;
+    const defectsRaw = rooms * PRICE_PER_ROOM + windows * PRICE_PER_WINDOW + area * PRICE_PER_SQM;
+    const defects = Math.min(defectsRaw, defectsCap);
     const base = penalty + defects;
     const fine = base * 0.5;
     const moral = 30000;
     const total = base + fine + moral;
-    return { days, penalty, defects, fine, moral, total };
-  }, [price, plannedDate, factDate]);
+    return { days, penalty, defects, defectsCap, fine, moral, total };
+  }, [price, plannedDate, factDate, rooms, windows, area]);
 
   const rows = [
     { label: 'Неустойка за просрочку', value: result.penalty, icon: 'Clock' },
@@ -39,7 +49,7 @@ const Calculator = () => {
       <div className="p-8 md:p-10 space-y-6">
         <div>
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-navy-light/70">Калькулятор неустойки</p>
-          <h3 className="mt-2 font-display text-2xl font-extrabold text-navy">Введите три параметра</h3>
+          <h3 className="mt-2 font-display text-2xl font-extrabold text-navy">Введите параметры квартиры</h3>
         </div>
 
         <label className="block space-y-2">
@@ -73,10 +83,49 @@ const Calculator = () => {
           </label>
         </div>
 
+        <div className="grid gap-4 sm:grid-cols-3">
+          <label className="block space-y-2">
+            <span className="text-sm font-medium text-navy-light">Комнат</span>
+            <input
+              type="number"
+              min={0}
+              value={rooms}
+              onChange={(e) => setRooms(Number(e.target.value))}
+              className="w-full rounded-lg border border-input bg-background px-4 py-3 text-navy outline-none focus:border-navy focus:ring-2 focus:ring-navy/15 transition"
+            />
+          </label>
+          <label className="block space-y-2">
+            <span className="text-sm font-medium text-navy-light">Окон</span>
+            <input
+              type="number"
+              min={0}
+              value={windows}
+              onChange={(e) => setWindows(Number(e.target.value))}
+              className="w-full rounded-lg border border-input bg-background px-4 py-3 text-navy outline-none focus:border-navy focus:ring-2 focus:ring-navy/15 transition"
+            />
+          </label>
+          <label className="block space-y-2">
+            <span className="text-sm font-medium text-navy-light">Площадь, м²</span>
+            <input
+              type="number"
+              min={0}
+              value={area}
+              onChange={(e) => setArea(Number(e.target.value))}
+              className="w-full rounded-lg border border-input bg-background px-4 py-3 text-navy outline-none focus:border-navy focus:ring-2 focus:ring-navy/15 transition"
+            />
+          </label>
+        </div>
+
         <div className="flex items-center gap-2 text-sm text-muted-foreground">
           <Icon name="Info" size={16} />
           Просрочка: <span className="font-semibold text-navy">{result.days} дн.</span> Расчёт по ключевой ставке 16%.
         </div>
+        {result.defects >= result.defectsCap && (
+          <div className="flex items-center gap-2 text-sm text-muted-foreground">
+            <Icon name="ShieldAlert" size={16} />
+            Компенсация за дефекты ограничена 3% от цены квартиры ({fmt(result.defectsCap)} ₽).
+          </div>
+        )}
       </div>
 
       <div className="relative bg-navy-deep p-8 md:p-10 text-white grain">
