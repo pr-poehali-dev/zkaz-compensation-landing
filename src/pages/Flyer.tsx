@@ -45,7 +45,7 @@ const QR_CODE_URL = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&da
 
 const Flyer = () => {
   return (
-    <div className="min-h-screen bg-slate-200 py-10 font-sans">
+    <div className="flyer-root min-h-screen bg-slate-200 py-10 font-sans">
       <div className="no-print sticky top-0 z-10 mb-8 flex justify-center">
         <button
           onClick={() => window.print()}
@@ -55,7 +55,7 @@ const Flyer = () => {
         </button>
       </div>
 
-      <div className="flex flex-col items-center gap-10">
+      <div className="flyer-pages flex flex-col items-center gap-10">
         {/* FRONT SIDE */}
         <div className="a5-page relative overflow-hidden bg-navy-deep text-white shadow-2xl grain">
           <div className="absolute -right-24 -top-24 h-72 w-72 rounded-full bg-navy-light/30 blur-3xl" />
@@ -191,14 +191,35 @@ const Flyer = () => {
         }
         @media print {
           @page { size: A5; margin: 0; }
-          body { background: white !important; }
+          html, body { background: white !important; margin: 0 !important; padding: 0 !important; }
+          body * { visibility: hidden; }
+          .flyer-root, .flyer-root * { visibility: visible; }
           .no-print { display: none !important; }
+          .flyer-root {
+            position: absolute;
+            inset: 0;
+            padding: 0 !important;
+            margin: 0 !important;
+            min-height: 0 !important;
+          }
+          .flyer-pages {
+            gap: 0 !important;
+          }
           .a5-page {
             border-radius: 0;
             box-shadow: none !important;
             page-break-after: always;
+            break-after: page;
+            page-break-inside: avoid;
+            break-inside: avoid;
+            overflow: hidden !important;
             width: 148mm;
             height: 210mm;
+            margin: 0 auto;
+          }
+          .a5-page:last-child {
+            page-break-after: auto;
+            break-after: auto;
           }
         }
       `}</style>
