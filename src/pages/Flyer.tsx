@@ -189,9 +189,14 @@ const Flyer = () => {
           height: 210mm;
           border-radius: 12px;
         }
+        .a5-page, .a5-page * {
+          -webkit-print-color-adjust: exact;
+          print-color-adjust: exact;
+          color-adjust: exact;
+        }
         @media print {
           @page { size: A5; margin: 0; }
-          html, body { background: white !important; margin: 0 !important; padding: 0 !important; }
+          html, body { background: white !important; margin: 0 !important; padding: 0 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
           body * { visibility: hidden; }
           .flyer-root, .flyer-root * { visibility: visible; }
           .no-print { display: none !important; }
