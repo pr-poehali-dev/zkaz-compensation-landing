@@ -40,8 +40,8 @@ const faq = [
   { q: 'Сколько времени займёт?', a: 'В среднем 4–6 месяцев от первого осмотра до получения денег.' },
 ];
 
-const PHOTO =
-  'https://cdn.poehali.dev/projects/bc95d7d2-5577-46ab-81ff-ded0d2e4bfc4/bucket/781c8f3f-4aeb-4906-8fbe-a819800f524e.jpg';
+const SITE_URL = 'https://защита.online/';
+const QR_CODE_URL = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(SITE_URL)}`;
 
 const Flyer = () => {
   return (
@@ -87,14 +87,6 @@ const Flyer = () => {
               </div>
             </div>
 
-            {/* Photo + signature */}
-            <div className="mt-6 flex items-center gap-4 rounded-2xl bg-white/5 p-4">
-              <div className="h-24 w-20 shrink-0 overflow-hidden rounded-xl border-2 border-gold/50">
-                <img src={PHOTO} alt="Юрист" className="h-full w-full object-cover" />
-              </div>
-              <p className="text-[12px] leading-snug text-white/85 mx-0 px-0 py-0 my-0 text-center">Меня зовут Рустам. Я расскажу про ваши шансы за 10 минут на бесплатной консультации.</p>
-            </div>
-
             {/* How it works */}
             <div className="mt-6 space-y-2.5">
               {howItWorks.map((s) => (
@@ -128,11 +120,7 @@ const Flyer = () => {
                 <p className="text-[11px] text-white/60">WhatsApp / Telegram: @pravo_dolshchik</p>
               </div>
               <div className="flex h-[25mm] w-[25mm] shrink-0 items-center justify-center rounded-lg bg-white p-1.5">
-                <div className="grid h-full w-full grid-cols-5 grid-rows-5 gap-[2px]">
-                  {Array.from({ length: 25 }).map((_, i) => (
-                    <span key={i} className={`${[0,1,2,3,4,5,9,10,14,15,19,20,21,22,23,24,12].includes(i) ? 'bg-navy-deep' : ''} rounded-[1px]`} />
-                  ))}
-                </div>
+                <img src={QR_CODE_URL} alt="QR-код на сайт" className="h-full w-full object-contain" />
               </div>
             </div>
 
