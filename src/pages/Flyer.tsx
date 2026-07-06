@@ -103,7 +103,7 @@ const Flyer = () => {
             <div className="flex items-center justify-between gap-3 bg-white/5 py-2.5 my-3 rounded-xl mx-0 px-3">
               <div className="flex items-center gap-1.5">
                 <Icon name="Star" size={14} className="fill-gold text-gold" />
-                <span className="font-display text-[12px] font-bold text-gold">4,9</span>
+                <span className="font-display text-[12px] font-bold text-gold">5,0</span>
                 <span className="text-[10px] text-white/50">· 214 отзывов на картах</span>
               </div>
               <div className="flex items-center gap-1.5 text-[10px] text-white/60">
@@ -162,16 +162,14 @@ const Flyer = () => {
               ))}
             </div>
 
-            <div className="space-y-2 rounded-2xl bg-navy-deep p-4 text-white grain my-0">
+            <div className="space-y-2 rounded-2xl bg-navy-deep p-4 text-white grain px-[3px] my-2">
               <p className="font-display text-sm font-bold text-gold">Позвоните или напишите: +7 (995) 440-77-50 / 
 +7 (960) 772-48-88</p>
               <p className="text-[11px] text-white/70">
                 Или отсканируйте QR с лицевой стороны, чтобы рассчитать компенсацию за 1 минуту.
               </p>
               <div className="flex items-center justify-between border-t border-white/10 pt-2 text-[10px] text-white/60">
-                <span className="flex items-center gap-1.5">
-                  <Icon name="Star" size={12} className="fill-gold text-gold" /> 4,9 · 214 отзывов
-                </span>
+                <span className="flex items-center gap-1.5">5,0 · 214 отзывов</span>
                 <span className="flex items-center gap-1.5">
                   <Icon name="MapPin" size={12} className="text-gold" /> г. Красноярск, ул. Красной Гвардии, д. 21
                 </span>
