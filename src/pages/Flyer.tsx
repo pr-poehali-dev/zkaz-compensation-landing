@@ -189,7 +189,7 @@ const Flyer = () => {
               </div>
             </div>
 
-            <p className="mt-3 text-center text-[9px] leading-snug text-muted-foreground">ПравоДольщик · © 2026 · Все права защищены</p>
+            <p className="mt-3 text-center text-[9px] leading-snug text-muted-foreground">Региональный центр защиты прав потребителей · © 2026 · Все права защищены</p>
           </div>
         </div>
       </div>
