@@ -13,7 +13,7 @@ const daysBetween = (a: string, b: string) => {
 const PRICE_PER_ROOM = 15000;
 const PRICE_PER_WINDOW = 8000;
 const PRICE_PER_SQM = 1500;
-const DEFECTS_CAP_RATE = 0.03;
+const DEFECTS_CAP_RATE = 0.06;
 
 const Calculator = () => {
   const [price, setPrice] = useState<number>(6500000);
@@ -123,7 +123,7 @@ const Calculator = () => {
         {result.defects >= result.defectsCap && (
           <div className="flex items-center gap-2 text-sm text-muted-foreground">
             <Icon name="ShieldAlert" size={16} />
-            Компенсация за дефекты ограничена 3% от цены квартиры ({fmt(result.defectsCap)} ₽).
+            Компенсация за дефекты ограничена 6% от цены квартиры ({fmt(result.defectsCap)} ₽).
           </div>
         )}
       </div>
