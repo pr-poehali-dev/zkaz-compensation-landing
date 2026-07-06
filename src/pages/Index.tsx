@@ -20,7 +20,6 @@ const stats = [
 const steps = [
   { icon: 'Search', title: 'Консультация и осмотр', text: 'Бесплатно приезжаем и фиксируем дефекты' },
   { icon: 'FileText', title: 'Экспертиза и претензия', text: 'Проводим за наш счёт, готовим документы' },
-  { icon: 'Gavel', title: 'Суд', text: 'Ведём дело и защищаем ваши интересы' },
   { icon: 'Wallet', title: 'Выплаты', text: 'Вы получаете деньги, мы — процент' },
 ];
 
@@ -136,9 +135,9 @@ const Index = () => {
       <section id="how" className="container py-20 md:py-24">
         <div className="mx-auto mb-14 max-w-2xl text-center">
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-gold">Как мы работаем</p>
-          <h2 className="mt-3 font-display text-3xl font-extrabold text-navy md:text-4xl">Четыре шага до выплаты</h2>
+          <h2 className="mt-3 font-display text-3xl font-extrabold text-navy md:text-4xl">Три шага до выплаты</h2>
         </div>
-        <div className="grid gap-6 md:grid-cols-4">
+        <div className="grid gap-6 md:grid-cols-3">
           {steps.map((s, i) => (
             <div key={s.title} className="relative rounded-2xl border border-border bg-card p-6">
               <span className="font-display text-5xl font-black text-navy/10">0{i + 1}</span>
