@@ -116,7 +116,7 @@ const Flyer = () => {
               </div>
               <div className="flex items-center gap-1.5 text-[10px] text-white/60">
                 <Icon name="MapPin" size={12} className="text-gold" />
-                г. Москва, ул. Правовая, 1
+                г. Красноярск, ул. Красной Гвардии, д. 21
               </div>
             </div>
 

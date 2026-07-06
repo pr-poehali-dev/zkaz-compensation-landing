@@ -2,7 +2,7 @@ import Icon from '@/components/ui/icon';
 
 const RATING = 4.9;
 const REVIEWS = 214;
-const ADDRESS = 'г. Москва, ул. Правовая, 1';
+const ADDRESS = 'г. Красноярск, ул. Красной Гвардии, д. 21';
 
 const Stars = ({ value }: { value: number }) => (
   <div className="flex items-center gap-0.5">
@@ -74,7 +74,7 @@ const MapBlock = () => {
           </div>
 
           <a
-            href="https://yandex.ru/maps/?text=Москва%2C%20улица%20Правовая%2C%201"
+            href="https://yandex.ru/maps/?text=Красноярск%2C%20улица%20Красной%20Гвардии%2C%2021"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center gap-2 rounded-lg bg-navy px-6 py-3.5 font-display font-bold text-white transition hover:bg-navy-deep"
@@ -87,7 +87,7 @@ const MapBlock = () => {
         <div className="relative min-h-[340px] lg:min-h-full">
           <iframe
             title="Карта офиса"
-            src="https://yandex.ru/map-widget/v1/?ll=37.617700%2C55.755800&z=15&pt=37.617700,55.755800,pm2rdm"
+            src="https://yandex.ru/map-widget/v1/?text=Красноярск%2C%20улица%20Красной%20Гвардии%2C%2021&z=16"
             className="absolute inset-0 h-full w-full grayscale-[0.15]"
             loading="lazy"
             allowFullScreen
