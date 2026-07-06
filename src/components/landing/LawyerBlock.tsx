@@ -8,8 +8,8 @@ const managers = [
     text: 'С первого звонка сопровождаю вас лично: собираю документы, слежу за сроками и держу в курсе каждого этапа.',
   },
   {
-    photo: 'https://cdn.poehali.dev/projects/bc95d7d2-5577-46ab-81ff-ded0d2e4bfc4/files/cf4bb4e5-0d8b-48f8-bf22-9cc47e30cc09.jpg',
-    name: 'Дмитрий Волков',
+    photo: 'https://cdn.poehali.dev/projects/bc95d7d2-5577-46ab-81ff-ded0d2e4bfc4/bucket/0b171411-7b2a-42af-9ebc-60862826d9eb.jpg',
+    name: 'Рустам Супруненко',
     role: 'Менеджер по сопровождению дел',
     text: 'Отвечаю за общение с застройщиком и экспертами — вы получаете отчёт о ходе дела без лишних звонков.',
   },
