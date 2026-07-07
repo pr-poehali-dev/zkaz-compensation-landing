@@ -145,7 +145,7 @@ const Flyer = () => {
         </div>
 
         {/* BACK SIDE */}
-        <div className="a5-page relative overflow-hidden bg-background shadow-2xl">
+        <div className="rounded-xl border border-border bg-card p-3 my-0">
           <div className="flex h-full flex-col p-7">
             <h2 className="text-center font-display text-lg font-extrabold leading-snug text-navy">
               Какие дефекты реально компенсируют — самые частые недостатки
@@ -166,7 +166,7 @@ const Flyer = () => {
             </div>
 
             <p className="mt-6 text-[11px] font-semibold uppercase tracking-[0.2em] text-gold">Частые вопросы</p>
-            <div className="mt-2.5 space-y-2">
+            <div className="space-y-2 rounded-2xl bg-navy-deep p-4 text-white grain px-[5px] my-0">
               {faq.map((f) => (
                 <div key={f.q} className="rounded-xl bg-secondary/60 p-2.5">
                   <p className="font-display text-[12px] font-bold text-navy">{f.q}</p>
@@ -191,7 +191,7 @@ const Flyer = () => {
               </div>
             </div>
 
-            <p className="mt-3 text-center text-[9px] leading-snug text-muted-foreground">Региональный центр защиты прав потребителей · © 2026 · Все права защищены</p>
+            <p className="text-center text-[9px] leading-snug text-muted-foreground py-0 px-0 my-0">Региональный центр защиты прав потребителей · © 2026 · Все права защищены</p>
           </div>
         </div>
       </div>
