@@ -92,8 +92,12 @@ const Flyer = () => {
               </div>
             </div>
 
+            <p className="mt-6 text-center text-[11px] leading-snug text-white/70">
+              Дефекты есть почти в каждой квартире — если не найти их сейчас, они всплывут позже и ремонт придётся оплачивать самому
+            </p>
+
             {/* How it works */}
-            <div className="mt-6 space-y-2.5">
+            <div className="mt-3 space-y-2.5">
               {howItWorks.map((s) => (
                 <div key={s.text} className="flex items-center gap-3 rounded-xl bg-white/[0.07] p-2.5">
                   <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-gold text-navy-deep">
