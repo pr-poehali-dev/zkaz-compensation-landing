@@ -175,7 +175,7 @@ const Flyer = () => {
               ))}
             </div>
 
-            <div className="space-y-2 rounded-2xl bg-navy-deep p-4 text-white grain my-0.5 py-2 px-[27px]">
+            <div className="space-y-2 rounded-2xl bg-navy-deep p-4 text-white grain py-2 px-[23px] my-[5px]">
               <p className="font-display text-[11px] font-bold uppercase tracking-wide text-white/70">Позвоните или напишите</p>
               <div className="flex flex-wrap items-center gap-x-3 gap-y-0.5">
                 <span className="font-display text-sm font-bold text-gold whitespace-nowrap">+7 (995) 440-77-50</span>
