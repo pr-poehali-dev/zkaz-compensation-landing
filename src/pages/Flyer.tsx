@@ -130,7 +130,7 @@ const Flyer = () => {
             <div className="flex items-center justify-between gap-4 rounded-2xl bg-white/10 p-4 my-2.5 px-[13px] py-[19px]">
               <div>
                 <p className="font-display text-sm font-bold text-gold">Рассчитать компенсацию за 1 минуту</p>
-                <p className="mt-1 text-[11px] text-white/60">Или позвоните: +7 (995) 440-77-50 ; +7 (960) 772-48-88 </p>
+                <p className="text-white/60 my-1 py-0 px-0 text-xl">Или позвоните: +7 (995) 440-77-50 ; +7 (960) 772-48-88 </p>
                 <p className="text-[11px] text-white/60">WhatsApp / Telegram: @pravo2026</p>
               </div>
               <div className="flex h-[25mm] w-[25mm] shrink-0 items-center justify-center rounded-lg bg-white p-1.5">
@@ -182,9 +182,7 @@ const Flyer = () => {
                 Или отсканируйте QR с лицевой стороны, чтобы рассчитать компенсацию за 1 минуту.
               </p>
               <div className="flex items-center justify-between border-t border-white/10 pt-2 text-[10px] text-white/60">
-                <span className="flex items-center gap-1.5">
-                  <Icon name="Star" size={12} className="fill-gold text-gold" /> 5,0 · 214 отзывов
-                </span>
+                <span className="flex items-center gap-1.5">4,9 · 214 отзывов</span>
                 <span className="flex items-center gap-1.5">
                   <Icon name="MapPin" size={12} className="text-gold" /> г. Красноярск, ул. Красной Гвардии, д. 21
                 </span>
