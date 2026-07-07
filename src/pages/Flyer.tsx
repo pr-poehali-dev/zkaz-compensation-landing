@@ -34,7 +34,7 @@ const caseCards = [
   },
   {
     icon: 'Zap',
-    title: 'Неисправная электрика и сантехника',
+    title: 'Неисправная электрика и розетки',
     text: 'Проверяем на соответствие проекту, включаем в претензию стоимость устранения.',
   },
 ];
@@ -84,7 +84,7 @@ const Flyer = () => {
             <div className="mt-5 grid grid-cols-2 gap-2.5">
               <div className="rounded-xl bg-white/5 p-3 text-center">
                 <p className="font-display text-base font-black leading-tight text-gold">250 000–700 000 ₽</p>
-                <p className="mt-1 text-[10px] text-white/60">средний размер компенсации</p>
+                <p className="mt-1 text-[10px] text-white/60">средний размер взыскания</p>
               </div>
               <div className="rounded-xl bg-white/5 p-3 text-center">
                 <p className="font-display text-base font-black leading-tight text-gold">6–8 месяцев</p>
@@ -117,7 +117,7 @@ const Flyer = () => {
             <div className="flex items-center justify-between gap-3 bg-white/5 py-2.5 my-3 rounded-xl mx-0 px-3">
               <div className="flex items-center gap-1.5">
                 <Icon name="Star" size={14} className="fill-gold text-gold" />
-                <span className="font-display text-[12px] font-bold text-gold">4,9</span>
+                <span className="font-display text-[12px] font-bold text-gold">5,0</span>
                 <span className="text-[10px] text-white/50">· 214 отзывов на картах</span>
               </div>
               <div className="flex items-center gap-1.5 text-[10px] text-white/60">
@@ -130,7 +130,7 @@ const Flyer = () => {
             <div className="flex items-center justify-between gap-4 rounded-2xl bg-white/10 p-4 my-2.5 px-[13px] py-[19px]">
               <div>
                 <p className="font-display text-sm font-bold text-gold">Рассчитать компенсацию за 1 минуту</p>
-                <p className="text-white/60 my-1 py-0 px-0 text-xl">Или позвоните: +7 (995) 440-77-50 ; +7 (960) 772-48-88 </p>
+                <p className="mt-1 text-[11px] text-white/60">Или позвоните: +7 (995) 440-77-50 ; +7 (960) 772-48-88 </p>
                 <p className="text-[11px] text-white/60">WhatsApp / Telegram: @pravo2026</p>
               </div>
               <div className="flex h-[25mm] w-[25mm] shrink-0 items-center justify-center rounded-lg bg-white p-1.5">
@@ -183,7 +183,7 @@ const Flyer = () => {
               </p>
               <div className="flex items-center justify-between border-t border-white/10 pt-2 text-[10px] text-white/60">
                 <span className="flex items-center gap-1.5">
-                  <Icon name="Star" size={12} className="fill-gold text-gold" /> 4,9 · 214 отзывов
+                  <Icon name="Star" size={12} className="fill-gold text-gold" /> 5,0 · 214 отзывов
                 </span>
                 <span className="flex items-center gap-1.5">
                   <Icon name="MapPin" size={12} className="text-gold" /> г. Красноярск, ул. Красной Гвардии, д. 21
