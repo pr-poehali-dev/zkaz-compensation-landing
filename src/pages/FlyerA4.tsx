@@ -64,7 +64,7 @@ const FlyerA4 = () => {
             </div>
 
             {/* Warning */}
-            <div className="mt-6 flex items-center gap-3 rounded-xl bg-white/[0.07] p-3.5">
+            <div className="mt-6 flex items-center gap-3 rounded-xl bg-white/[0.07] p-3.5 py-0">
               <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-gold text-navy-deep">
                 <Icon name="AlertTriangle" size={20} />
               </span>
@@ -74,8 +74,8 @@ const FlyerA4 = () => {
             </div>
 
             {/* Defects grid */}
-            <p className="mt-7 text-sm font-semibold uppercase tracking-[0.2em] text-gold">Что чаще всего компенсируют</p>
-            <div className="mt-3 grid grid-cols-2 gap-3">
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-gold my-3">Что чаще всего компенсируют</p>
+            <div className="grid grid-cols-2 gap-3 my-0">
               {defects.map((d) => (
                 <div key={d.title} className="flex items-center gap-2.5 rounded-xl bg-white/[0.07] p-3">
                   <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-gold text-navy-deep">
@@ -101,7 +101,7 @@ const FlyerA4 = () => {
 
             <div className="mt-auto">
               {/* Rating + address */}
-              <div className="mt-7 flex items-center justify-between gap-3 rounded-xl bg-white/5 px-4 py-3">
+              <div className="flex items-center justify-between gap-3 rounded-xl bg-white/5 px-4 py-3 my-3">
                 <div className="flex items-center gap-1.5">
                   <Icon name="Star" size={16} className="fill-gold text-gold" />
                   <span className="font-display text-base font-bold text-gold">5,0</span>
@@ -114,7 +114,7 @@ const FlyerA4 = () => {
               </div>
 
               {/* CTA + QR */}
-              <div className="mt-3 flex items-center justify-between gap-5 rounded-2xl bg-white/10 p-5">
+              <div className="flex items-center justify-between gap-5 rounded-2xl bg-white/10 p-5 my-2">
                 <div>
                   <p className="font-display text-xl font-bold text-gold">Рассчитать компенсацию за 1 минуту</p>
                   <p className="mt-1.5 text-lg font-bold text-white">Или позвоните: +7 (995) 440-77-50 ; +7 (960) 772-48-88</p>
