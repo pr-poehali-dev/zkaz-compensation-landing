@@ -120,8 +120,11 @@ const FlyerA4 = () => {
                   <p className="mt-1.5 text-lg font-bold text-white">Или позвоните: +7 (995) 440-77-50 ; +7 (960) 772-48-88</p>
                   <p className="text-base text-white/60">WhatsApp / Telegram: @pravo2026</p>
                 </div>
-                <div className="flex h-[35mm] w-[35mm] shrink-0 items-center justify-center rounded-lg bg-white p-2">
-                  <img src={QR_CODE_URL} alt="QR-код на сайт" className="h-full w-full object-contain" />
+                <div className="flex shrink-0 flex-col items-center gap-1.5">
+                  <p className="font-display text-sm font-bold text-gold">защита.online</p>
+                  <div className="flex h-[35mm] w-[35mm] items-center justify-center rounded-lg bg-white p-2">
+                    <img src={QR_CODE_URL} alt="QR-код на сайт" className="h-full w-full object-contain" />
+                  </div>
                 </div>
               </div>
 
