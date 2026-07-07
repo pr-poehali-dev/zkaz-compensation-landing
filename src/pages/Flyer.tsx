@@ -10,26 +10,32 @@ const caseCards = [
   {
     icon: 'ThermometerSnowflake',
     title: 'Промерзание стен и плесень',
-    sum: 'до 450 000 ₽',
     text: 'Доказываем через тепловизор и акт осмотра. Застройщик не может свалить на «неправильную эксплуатацию».',
   },
   {
     icon: 'AppWindow',
     title: 'Окна продуваются, конденсат',
-    sum: 'до 560 000 ₽',
     text: 'Фиксируем отклонения по ГОСТ. Считаем полную замену окон и неустойку.',
   },
   {
     icon: 'LayoutPanelTop',
     title: 'Трещины и «бухтение» стяжки пола',
-    sum: 'до 400 000 ₽',
     text: 'Инструментальное обследование, расчёт демонтажа и новой стяжки.',
   },
   {
     icon: 'CalendarClock',
     title: 'Просрочка сдачи + дефекты отделки',
-    sum: 'до 700 000 ₽',
     text: 'Комплексная претензия: неустойка по ФЗ-214 + стоимость ремонта.',
+  },
+  {
+    icon: 'DoorOpen',
+    title: 'Перекошенные двери и проёмы',
+    text: 'Замеряем отклонения от проекта, включаем в претензию стоимость исправления.',
+  },
+  {
+    icon: 'Droplets',
+    title: 'Протечки и следы затопления',
+    text: 'Фиксируем повреждения отделки и мебели, взыскиваем ущерб по акту.',
   },
 ];
 
@@ -134,7 +140,7 @@ const Flyer = () => {
         <div className="a5-page relative overflow-hidden bg-background shadow-2xl">
           <div className="flex h-full flex-col p-7">
             <h2 className="text-center font-display text-lg font-extrabold leading-snug text-navy">
-              Какие дефекты реально компенсируют — и сколько денег можно получить
+              Какие дефекты реально компенсируют — самые частые недостатки
             </h2>
 
             <div className="mt-5 grid grid-cols-2 gap-2.5">
@@ -146,8 +152,7 @@ const Flyer = () => {
                     </span>
                     <p className="font-display text-[11px] font-bold leading-tight text-navy">{c.title}</p>
                   </div>
-                  <p className="mt-1.5 font-display text-sm font-black text-gold">{c.sum}</p>
-                  <p className="mt-1 text-[10px] leading-snug text-muted-foreground">{c.text}</p>
+                  <p className="mt-1.5 text-[10px] leading-snug text-muted-foreground">{c.text}</p>
                 </div>
               ))}
             </div>
