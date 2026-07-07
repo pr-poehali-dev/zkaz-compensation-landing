@@ -117,7 +117,7 @@ const Flyer = () => {
             <div className="flex items-center justify-between gap-3 bg-white/5 py-2.5 my-3 rounded-xl mx-0 px-3">
               <div className="flex items-center gap-1.5">
                 <Icon name="Star" size={14} className="fill-gold text-gold" />
-                <span className="font-display text-[12px] font-bold text-gold">5,0</span>
+                <span className="font-display text-[12px] font-bold text-gold">4,9</span>
                 <span className="text-[10px] text-white/50">· 214 отзывов на картах</span>
               </div>
               <div className="flex items-center gap-1.5 text-[10px] text-white/60">
