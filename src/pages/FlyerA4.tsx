@@ -87,7 +87,7 @@ const FlyerA4 = () => {
             </div>
 
             {/* How it works */}
-            <p className="mt-7 text-sm font-semibold uppercase tracking-[0.2em] text-gold">Как это работает</p>
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-gold my-[13px]">Как это работает</p>
             <div className="mt-3 grid grid-cols-3 gap-3">
               {howItWorks.map((s) => (
                 <div key={s.text} className="flex flex-col items-center gap-2 rounded-xl bg-white/[0.07] p-3.5 text-center">
@@ -101,10 +101,10 @@ const FlyerA4 = () => {
 
             <div className="mt-auto">
               {/* Rating + address */}
-              <div className="flex items-center justify-between gap-3 rounded-xl bg-white/5 px-4 py-3 my-3">
+              <div className="flex items-center justify-between gap-3 rounded-xl bg-white/5 px-4 py-3 my-2">
                 <div className="flex items-center gap-1.5">
                   <Icon name="Star" size={16} className="fill-gold text-gold" />
-                  <span className="font-display text-base font-bold text-gold">5,0</span>
+                  <span className="font-display text-base font-bold text-gold">4,9</span>
                   <span className="text-sm text-white/50">· 214 отзывов на картах</span>
                 </div>
                 <div className="flex items-center gap-1.5 text-sm text-white/60">
@@ -114,7 +114,7 @@ const FlyerA4 = () => {
               </div>
 
               {/* CTA + QR */}
-              <div className="flex items-center justify-between gap-5 rounded-2xl bg-white/10 p-5 my-2">
+              <div className="flex items-center justify-between gap-5 rounded-2xl bg-white/10 p-5 my-0">
                 <div>
                   <p className="font-display text-xl font-bold text-gold">Рассчитать компенсацию за 1 минуту</p>
                   <p className="mt-1.5 text-lg font-bold text-white">Или позвоните: +7 (995) 440-77-50 ; +7 (960) 772-48-88</p>
