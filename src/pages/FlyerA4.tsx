@@ -12,7 +12,7 @@ const defects = [
   { icon: 'LayoutPanelTop', title: 'Трещины и «бухтение» стяжки пола' },
   { icon: 'PaintBucket', title: 'Дефекты отделки: обои, покраска, штукатурка' },
   { icon: 'DoorOpen', title: 'Перекошенные двери и проёмы' },
-  { icon: 'Zap', title: 'Неисправная электрика и розетки' },
+  { icon: 'Zap', title: 'Неисправная электрика и сантехника' },
 ];
 
 const SITE_URL = 'https://защита.online/';
