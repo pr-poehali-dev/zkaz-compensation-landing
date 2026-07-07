@@ -115,8 +115,11 @@ const FlyerA4 = () => {
               <div className="flex items-center justify-between gap-5 rounded-2xl bg-white/10 p-5 py-0 my-[15px]">
                 <div>
                   <p className="font-display text-xl font-bold text-gold">Рассчитать компенсацию за 1 минуту</p>
-                  <p className="mt-1.5 text-lg font-bold text-white">Или позвоните: +7 (995) 440-77-50 ; 
-+7 (960) 772-48-88</p>
+                  <p className="mt-1.5 text-base font-semibold text-white/70">Или позвоните</p>
+                  <div className="flex flex-wrap items-center gap-x-4 gap-y-0.5">
+                    <span className="text-lg font-bold text-white whitespace-nowrap">+7 (995) 440-77-50</span>
+                    <span className="text-lg font-bold text-white whitespace-nowrap">+7 (960) 772-48-88</span>
+                  </div>
                   <p className="text-base text-white/60">WhatsApp / Telegram: @pravo2026</p>
                 </div>
                 <div className="flex shrink-0 flex-col items-center gap-1.5">
