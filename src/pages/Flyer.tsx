@@ -143,9 +143,9 @@ const Flyer = () => {
               Какие дефекты реально компенсируют — самые частые недостатки
             </h2>
 
-            <div className="mt-5 grid grid-cols-2 gap-2.5">
+            <div className="mt-5 grid grid-cols-2 grid-rows-3 gap-2.5">
               {caseCards.map((c) => (
-                <div key={c.title} className="rounded-xl border border-border bg-card p-3">
+                <div key={c.title} className="flex flex-col rounded-xl border border-border bg-card p-3">
                   <div className="flex items-center gap-2">
                     <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-secondary text-navy">
                       <Icon name={c.icon} size={15} />
