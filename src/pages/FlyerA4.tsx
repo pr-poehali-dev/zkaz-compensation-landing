@@ -41,25 +41,25 @@ const FlyerA4 = () => {
               <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-gold text-navy-deep">
                 <Icon name="Scale" size={20} />
               </div>
-              <span className="font-display text-base font-extrabold tracking-tight">
+              <span className="font-display text-lg font-extrabold tracking-tight">
                 Региональный центр <span className="text-gold">защиты прав потребителей</span>
               </span>
             </div>
 
             {/* Headline */}
-            <h1 className="mt-8 text-center font-display text-[34px] font-black leading-[1.15]">
+            <h1 className="mt-8 text-center font-display text-[40px] font-black leading-[1.15]">
               Взыщем компенсацию с застройщика за дефекты квартиры — без предоплаты
             </h1>
 
             {/* Stats */}
             <div className="mt-7 grid grid-cols-2 gap-4">
               <div className="rounded-xl bg-white/5 p-4 text-center">
-                <p className="font-display text-2xl font-black leading-tight text-gold">250 000–700 000 ₽</p>
-                <p className="mt-1 text-xs text-white/60">средний размер взыскания</p>
+                <p className="font-display text-3xl font-black leading-tight text-gold">250 000–700 000 ₽</p>
+                <p className="mt-1 text-sm text-white/60">средний размер взыскания</p>
               </div>
               <div className="rounded-xl bg-white/5 p-4 text-center">
-                <p className="font-display text-2xl font-black leading-tight text-gold">6–8 месяцев</p>
-                <p className="mt-1 text-xs text-white/60">средний срок</p>
+                <p className="font-display text-3xl font-black leading-tight text-gold">6–8 месяцев</p>
+                <p className="mt-1 text-sm text-white/60">средний срок</p>
               </div>
             </div>
 
@@ -68,33 +68,33 @@ const FlyerA4 = () => {
               <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-gold text-navy-deep">
                 <Icon name="AlertTriangle" size={20} />
               </span>
-              <p className="text-sm leading-snug text-white/90">
+              <p className="text-base leading-snug text-white/90">
                 Дефекты есть почти в каждой квартире — если не найти их сейчас, они всплывут позже и ремонт придётся оплачивать самому
               </p>
             </div>
 
             {/* Defects grid */}
-            <p className="mt-7 text-xs font-semibold uppercase tracking-[0.2em] text-gold">Что чаще всего компенсируют</p>
+            <p className="mt-7 text-sm font-semibold uppercase tracking-[0.2em] text-gold">Что чаще всего компенсируют</p>
             <div className="mt-3 grid grid-cols-2 gap-3">
               {defects.map((d) => (
                 <div key={d.title} className="flex items-center gap-2.5 rounded-xl bg-white/[0.07] p-3">
                   <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-gold text-navy-deep">
                     <Icon name={d.icon} size={16} />
                   </span>
-                  <p className="text-[13px] leading-snug text-white/90">{d.title}</p>
+                  <p className="text-base leading-snug text-white/90">{d.title}</p>
                 </div>
               ))}
             </div>
 
             {/* How it works */}
-            <p className="mt-7 text-xs font-semibold uppercase tracking-[0.2em] text-gold">Как это работает</p>
+            <p className="mt-7 text-sm font-semibold uppercase tracking-[0.2em] text-gold">Как это работает</p>
             <div className="mt-3 grid grid-cols-3 gap-3">
               {howItWorks.map((s) => (
                 <div key={s.text} className="flex flex-col items-center gap-2 rounded-xl bg-white/[0.07] p-3.5 text-center">
                   <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-gold text-navy-deep">
                     <Icon name={s.icon} size={18} />
                   </span>
-                  <p className="text-[12.5px] leading-snug text-white/90">{s.text}</p>
+                  <p className="text-sm leading-snug text-white/90">{s.text}</p>
                 </div>
               ))}
             </div>
@@ -104,10 +104,10 @@ const FlyerA4 = () => {
               <div className="mt-7 flex items-center justify-between gap-3 rounded-xl bg-white/5 px-4 py-3">
                 <div className="flex items-center gap-1.5">
                   <Icon name="Star" size={16} className="fill-gold text-gold" />
-                  <span className="font-display text-sm font-bold text-gold">5,0</span>
-                  <span className="text-xs text-white/50">· 214 отзывов на картах</span>
+                  <span className="font-display text-base font-bold text-gold">5,0</span>
+                  <span className="text-sm text-white/50">· 214 отзывов на картах</span>
                 </div>
-                <div className="flex items-center gap-1.5 text-xs text-white/60">
+                <div className="flex items-center gap-1.5 text-sm text-white/60">
                   <Icon name="MapPin" size={14} className="text-gold" />
                   г. Красноярск, ул. Красной Гвардии, д. 21
                 </div>
@@ -116,16 +116,16 @@ const FlyerA4 = () => {
               {/* CTA + QR */}
               <div className="mt-3 flex items-center justify-between gap-5 rounded-2xl bg-white/10 p-5">
                 <div>
-                  <p className="font-display text-lg font-bold text-gold">Рассчитать компенсацию за 1 минуту</p>
-                  <p className="mt-1.5 text-base font-bold text-white">Или позвоните: +7 (995) 440-77-50 ; +7 (960) 772-48-88</p>
-                  <p className="text-sm text-white/60">WhatsApp / Telegram: @pravo2026</p>
+                  <p className="font-display text-xl font-bold text-gold">Рассчитать компенсацию за 1 минуту</p>
+                  <p className="mt-1.5 text-lg font-bold text-white">Или позвоните: +7 (995) 440-77-50 ; +7 (960) 772-48-88</p>
+                  <p className="text-base text-white/60">WhatsApp / Telegram: @pravo2026</p>
                 </div>
                 <div className="flex h-[35mm] w-[35mm] shrink-0 items-center justify-center rounded-lg bg-white p-2">
                   <img src={QR_CODE_URL} alt="QR-код на сайт" className="h-full w-full object-contain" />
                 </div>
               </div>
 
-              <p className="mt-4 text-center text-[10px] leading-snug text-white/40">
+              <p className="mt-4 text-center text-xs leading-snug text-white/40">
                 Результаты индивидуальны. Не является публичной офертой. Данные обезличены в соответствии с 152-ФЗ.
               </p>
             </div>
