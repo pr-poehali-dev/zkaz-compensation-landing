@@ -84,7 +84,7 @@ const Flyer = () => {
             <div className="mt-5 grid grid-cols-2 gap-2.5">
               <div className="rounded-xl bg-white/5 p-3 text-center">
                 <p className="font-display text-base font-black leading-tight text-gold">250 000–700 000 ₽</p>
-                <p className="mt-1 text-[10px] text-white/60">средний размер взыскания</p>
+                <p className="mt-1 text-[10px] text-white/60">средний размер компенсации</p>
               </div>
               <div className="rounded-xl bg-white/5 p-3 text-center">
                 <p className="font-display text-base font-black leading-tight text-gold">6–8 месяцев</p>
