@@ -140,7 +140,7 @@ const Flyer = () => {
         </div>
 
         {/* BACK SIDE */}
-        <div className="rounded-xl border border-border bg-card p-3 my-0">
+        <div className="a5-page relative overflow-hidden bg-background shadow-2xl">
           <div className="flex h-full flex-col p-7">
             <h2 className="text-center font-display text-lg font-extrabold leading-snug text-navy">
               Какие дефекты реально компенсируют — самые частые недостатки
