@@ -55,7 +55,7 @@ const FlyerA4 = () => {
             <div className="mt-7 grid grid-cols-2 gap-4">
               <div className="rounded-xl bg-white/5 p-4 text-center">
                 <p className="font-display text-3xl font-black leading-tight text-gold">250 000–700 000 ₽</p>
-                <p className="mt-1 text-sm text-white/60">средний размер взыскания</p>
+                <p className="mt-1 text-sm text-white/60">средний размер компенсации</p>
               </div>
               <div className="rounded-xl bg-white/5 p-4 text-center">
                 <p className="font-display text-3xl font-black leading-tight text-gold">6–8 месяцев</p>
@@ -68,9 +68,7 @@ const FlyerA4 = () => {
               <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-gold text-navy-deep">
                 <Icon name="AlertTriangle" size={20} />
               </span>
-              <p className="text-base leading-snug text-white/90">
-                Дефекты есть почти в каждой квартире — если не найти их сейчас, они всплывут позже и ремонт придётся оплачивать самому
-              </p>
+              <p className="text-base leading-snug text-white/90">Дефекты есть в каждой квартире — если не найти их сейчас, они проявятся позже и оплачивать ремонт придётся самостоятельно</p>
             </div>
 
             {/* Defects grid */}
