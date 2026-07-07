@@ -42,7 +42,7 @@ const FlyerA4 = () => {
                 <Icon name="Scale" size={20} />
               </div>
               <span className="font-display text-lg font-extrabold tracking-tight text-white">
-                Региональный центр <span className="text-white">защиты прав потребителей</span>
+                Региональный центр <span className="text-gold">защиты прав потребителей</span>
               </span>
             </div>
 
