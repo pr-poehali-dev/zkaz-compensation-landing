@@ -96,9 +96,7 @@ const Flyer = () => {
               <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-gold text-navy-deep">
                 <Icon name="AlertTriangle" size={16} />
               </span>
-              <p className="text-[12.5px] leading-snug text-white/90">
-                Дефекты есть почти в каждой квартире — если не найти их сейчас, они всплывут позже и ремонт придётся оплачивать самому
-              </p>
+              <p className="text-[12.5px] leading-snug text-white/90">Дефекты есть в каждой квартире — если не найти их сейчас, они проявятся позже и оплачивать ремонт придётся самостоятельно</p>
             </div>
 
             {/* How it works */}
