@@ -47,7 +47,7 @@ const FlyerA4 = () => {
             </div>
 
             {/* Headline */}
-            <h1 className="mt-8 text-center font-display text-[40px] font-black leading-[1.15]">
+            <h1 className="mt-8 font-display text-[40px] font-black leading-[1.15] text-center">
               Взыщем компенсацию с застройщика за дефекты квартиры — без предоплаты
             </h1>
 
@@ -68,11 +68,12 @@ const FlyerA4 = () => {
               <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-gold text-navy-deep">
                 <Icon name="AlertTriangle" size={20} />
               </span>
-              <p className="text-base leading-snug text-white/90">В каждой квартире встречаются дефекты — мы это знаем. Гарантируем: вы получите компенсацию в любом случае.</p>
+              <p className="text-base leading-snug text-white/90">Дефекты есть в каждой квартире — если не найти их сейчас, они проявятся
+позже и оплачивать ремонт придётся самостоятельно</p>
             </div>
 
             {/* Defects grid */}
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-gold my-3">Что чаще всего компенсируют</p>
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-gold my-[1px]">Что чаще всего компенсируют</p>
             <div className="grid grid-cols-2 gap-3 my-0">
               {defects.map((d) => (
                 <div key={d.title} className="flex items-center gap-2.5 rounded-xl bg-white/[0.07] p-3">
@@ -85,7 +86,7 @@ const FlyerA4 = () => {
             </div>
 
             {/* How it works */}
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-gold my-[13px]">Как это работает</p>
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-gold my-0">Как это работает</p>
             <div className="grid grid-cols-3 gap-3 my-0 py-0 px-0 mx-0">
               {howItWorks.map((s) => (
                 <div key={s.text} className="flex flex-col items-center gap-2 rounded-xl bg-white/[0.07] p-3.5 text-center">
@@ -112,7 +113,7 @@ const FlyerA4 = () => {
               </div>
 
               {/* CTA + QR */}
-              <div className="flex items-center justify-between gap-5 rounded-2xl bg-white/10 p-5 py-0 my-[15px]">
+              <div className="flex items-center justify-between gap-5 rounded-2xl bg-white/10 p-5 px-[18px] py-0 my-0">
                 <div>
                   <p className="font-display text-xl font-bold text-gold">Рассчитать компенсацию за 1 минуту</p>
                   <p className="mt-1.5 text-base font-semibold text-white/70">Или позвоните</p>
@@ -130,7 +131,7 @@ const FlyerA4 = () => {
                 </div>
               </div>
 
-              <p className="mt-4 text-center text-xs leading-snug text-white/40">
+              <p className="text-center text-xs leading-snug text-white/40 py-0 my-1">
                 Результаты индивидуальны. Не является публичной офертой. Данные обезличены в соответствии с 152-ФЗ.
               </p>
             </div>
