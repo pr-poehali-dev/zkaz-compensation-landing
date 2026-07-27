@@ -59,11 +59,18 @@ const Flyer = () => {
           <Icon name="Printer" size={20} /> Скачать / распечатать PDF
         </button>
         <a
-          href="/print/flyer-a5-cmyk.pdf"
+          href="/print/flyer-a5-front-cmyk.pdf"
           download
           className="inline-flex items-center gap-2 rounded-lg bg-gold px-6 py-3 font-display font-bold text-navy-deep shadow-lg transition hover:brightness-95"
         >
-          <Icon name="Palette" size={20} /> Скачать PDF в CMYK для типографии
+          <Icon name="Palette" size={20} /> CMYK: лицевая сторона
+        </a>
+        <a
+          href="/print/flyer-a5-back-cmyk.pdf"
+          download
+          className="inline-flex items-center gap-2 rounded-lg bg-gold px-6 py-3 font-display font-bold text-navy-deep shadow-lg transition hover:brightness-95"
+        >
+          <Icon name="Palette" size={20} /> CMYK: обратная сторона
         </a>
       </div>
 
