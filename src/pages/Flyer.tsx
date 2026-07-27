@@ -129,7 +129,7 @@ const Flyer = () => {
               <div>
                 <p className="font-display text-sm font-bold text-gold">Рассчитать компенсацию за 1 минуту</p>
                 <p className="text-white/60 my-1 py-0 px-0 text-xl">Или позвоните: +7 (904) 891-68-88</p>
-                <p className="text-[11px] text-white/60">WhatsApp / Telegram: @pravo2026</p>
+                <p className="text-[11px] text-white/60">MAX / WhatsApp / Telegram</p>
               </div>
               <div className="flex h-[25mm] w-[25mm] shrink-0 items-center justify-center rounded-lg bg-white p-1.5">
                 <img src={QR_CODE_URL} alt="QR-код на сайт" className="h-full w-full object-contain" />
