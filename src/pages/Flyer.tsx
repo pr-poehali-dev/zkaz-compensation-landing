@@ -128,7 +128,7 @@ const Flyer = () => {
             <div className="flex items-center justify-between gap-4 rounded-2xl bg-white/10 p-4 my-2.5 px-[13px] py-[19px]">
               <div>
                 <p className="font-display text-sm font-bold text-gold">Рассчитать компенсацию за 1 минуту</p>
-                <p className="text-white/60 my-1 py-0 px-0 text-xl">Или позвоните: +7 (995) 440-77-50 ; +7 (904) 891-68-88</p>
+                <p className="text-white/60 my-1 py-0 px-0 text-xl">Или позвоните: +7 (995) 440-77-50 </p>
                 <p className="text-[11px] text-white/60">WhatsApp / Telegram: @pravo2026</p>
               </div>
               <div className="flex h-[25mm] w-[25mm] shrink-0 items-center justify-center rounded-lg bg-white p-1.5">
@@ -163,10 +163,10 @@ const Flyer = () => {
               ))}
             </div>
 
-            <p className="mt-6 text-[11px] font-semibold uppercase tracking-[0.2em] text-gold">Частые вопросы</p>
+            <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-gold py-0 my-0">Частые вопросы</p>
             <div className="mt-2.5 space-y-2">
               {faq.map((f) => (
-                <div key={f.q} className="rounded-xl bg-secondary/60 p-2.5">
+                <div key={f.q} className="rounded-xl bg-secondary/60 p-2.5 py-0 my-[11px]">
                   <p className="font-display text-[12px] font-bold text-navy">{f.q}</p>
                   <p className="mt-0.5 text-[11px] leading-snug text-muted-foreground">{f.a}</p>
                 </div>
