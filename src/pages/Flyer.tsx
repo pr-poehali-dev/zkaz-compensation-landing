@@ -163,7 +163,7 @@ const Flyer = () => {
               ))}
             </div>
 
-            <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-gold py-0 my-0">Частые вопросы</p>
+            <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-gold py-0.5 my-0">Частые вопросы</p>
             <div className="mt-2.5 space-y-2">
               {faq.map((f) => (
                 <div key={f.q} className="rounded-xl bg-secondary/60 p-2.5 py-0 my-[11px]">
