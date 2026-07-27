@@ -21,13 +21,20 @@ const QR_CODE_URL = `https://api.qrserver.com/v1/create-qr-code/?size=240x240&da
 const FlyerA4 = () => {
   return (
     <div className="flyer-root min-h-screen bg-slate-200 py-10 font-sans">
-      <div className="no-print sticky top-0 z-10 mb-8 flex justify-center">
+      <div className="no-print sticky top-0 z-10 mb-8 flex flex-wrap justify-center gap-3">
         <button
           onClick={() => window.print()}
           className="inline-flex items-center gap-2 rounded-lg bg-navy px-6 py-3 font-display font-bold text-white shadow-lg transition hover:bg-navy-deep"
         >
           <Icon name="Printer" size={20} /> Скачать / распечатать PDF
         </button>
+        <a
+          href="/print/flyer-a4-cmyk.pdf"
+          download
+          className="inline-flex items-center gap-2 rounded-lg bg-gold px-6 py-3 font-display font-bold text-navy-deep shadow-lg transition hover:brightness-95"
+        >
+          <Icon name="Palette" size={20} /> Скачать PDF в CMYK для типографии
+        </a>
       </div>
 
       <div className="flyer-pages flex flex-col items-center">
