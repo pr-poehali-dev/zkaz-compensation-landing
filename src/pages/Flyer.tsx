@@ -166,17 +166,17 @@ const Flyer = () => {
             <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-gold py-0.5 my-0">Частые вопросы</p>
             <div className="mt-2.5 space-y-2">
               {faq.map((f) => (
-                <div key={f.q} className="rounded-xl bg-secondary/60 p-2.5 py-0 my-[11px]">
+                <div key={f.q} className="rounded-xl bg-secondary/60 p-2.5 py-0 my-0.5">
                   <p className="font-display text-[12px] font-bold text-navy">{f.q}</p>
                   <p className="mt-0.5 text-[11px] leading-snug text-muted-foreground">{f.a}</p>
                 </div>
               ))}
             </div>
 
-            <div className="space-y-2 rounded-2xl bg-navy-deep p-4 text-white grain py-2 px-[23px] my-[5px]">
+            <div className="space-y-2 rounded-2xl bg-navy-deep p-4 text-white grain py-2 px-[23px] my-[15px]">
               <p className="font-display text-[11px] font-bold uppercase tracking-wide text-white/70">Позвоните или напишите</p>
               <div className="flex flex-wrap items-center gap-x-3 gap-y-0.5">
-                <span className="font-display text-sm font-bold text-gold whitespace-nowrap">+7 (904) 891-68-88</span>
+                <span className="font-display text-sm font-bold text-gold whitespace-nowrap">+7 (995) 440-77-50</span>
                 <span className="font-display text-sm font-bold text-gold whitespace-nowrap"></span>
               </div>
               <p className="text-[11px] text-white/70">
