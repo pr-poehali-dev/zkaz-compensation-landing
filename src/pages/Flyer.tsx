@@ -177,7 +177,7 @@ const Flyer = () => {
               <p className="font-display text-[11px] font-bold uppercase tracking-wide text-white/70">Позвоните или напишите</p>
               <div className="flex flex-wrap items-center gap-x-3 gap-y-0.5">
                 <span className="font-display text-sm font-bold text-gold whitespace-nowrap">+7 (995) 440-77-50</span>
-                <span className="font-display text-sm font-bold text-gold whitespace-nowrap">+7 (904) 891-68-88</span>
+                <span className="font-display text-sm font-bold text-gold whitespace-nowrap"></span>
               </div>
               <p className="text-[11px] text-white/70">
                 Или отсканируйте QR с лицевой стороны, чтобы рассчитать компенсацию за 1 минуту.
