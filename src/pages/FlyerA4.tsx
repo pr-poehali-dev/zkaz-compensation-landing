@@ -73,7 +73,7 @@ const FlyerA4 = () => {
             </div>
 
             {/* Defects grid */}
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-gold my-[1px]">Что чаще всего компенсируют</p>
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-gold my-1">Что чаще всего компенсируют</p>
             <div className="grid grid-cols-2 gap-3 my-0">
               {defects.map((d) => (
                 <div key={d.title} className="flex items-center gap-2.5 rounded-xl bg-white/[0.07] p-3">
@@ -86,7 +86,7 @@ const FlyerA4 = () => {
             </div>
 
             {/* How it works */}
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-gold my-0">Как это работает</p>
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-gold my-0 py-1">Как это работает</p>
             <div className="grid grid-cols-3 gap-3 my-0 py-0 px-0 mx-0">
               {howItWorks.map((s) => (
                 <div key={s.text} className="flex flex-col items-center gap-2 rounded-xl bg-white/[0.07] p-3.5 text-center">
