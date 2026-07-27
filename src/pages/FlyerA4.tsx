@@ -119,7 +119,7 @@ const FlyerA4 = () => {
                   <p className="mt-1.5 text-base font-semibold text-white/70">Или позвоните</p>
                   <div className="flex flex-wrap items-center gap-x-4 gap-y-0.5">
                     <span className="text-lg font-bold text-white whitespace-nowrap">+7 (995) 440-77-50</span>
-                    <span className="text-lg font-bold text-white whitespace-nowrap">+7 (904) 891-68-88</span>
+                    <span className="text-lg font-bold text-white whitespace-nowrap"></span>
                   </div>
                   <p className="text-base text-white/60">WhatsApp / Telegram: @pravo2026</p>
                 </div>
