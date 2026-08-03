@@ -232,7 +232,7 @@ const Index = () => {
           <div>
             <p className="font-display font-bold text-navy">Контакты</p>
             <ul className="mt-4 space-y-3 text-sm text-muted-foreground">
-              <li className="flex items-center gap-2">+7 (995) 440-77-50; +7 (960) 772-48-88</li>
+              <li className="flex items-center gap-2">+7 (904) 891-68-88; +7 (995) 440-77-50</li>
               <li className="flex items-center gap-2">iamisterX777@yandex.ru</li>
               <li className="flex items-center gap-2">г. Красноярск, ул. Красной гвардии, д. 21</li>
             </ul>

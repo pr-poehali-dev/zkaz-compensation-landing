@@ -69,7 +69,7 @@ const MapBlock = () => {
               </div>
               <div>
                 <p className="font-display font-bold text-navy">Телефон</p>
-                <p className="text-sm text-muted-foreground">+7 (900) 000-00-00</p>
+                <p className="text-sm text-muted-foreground">+7 (904) 891-68-88; +7 (995) 440-77-50</p>
               </div>
             </div>
           </div>
