@@ -13,12 +13,6 @@ const managers = [
     role: 'Менеджер по сопровождению дел',
     text: 'Отвечаю за общение с застройщиком и экспертами — вы получаете отчёт о ходе дела без лишних звонков.',
   },
-  {
-    photo: 'https://cdn.poehali.dev/projects/bc95d7d2-5577-46ab-81ff-ded0d2e4bfc4/files/1e8f66de-1674-4805-a9cf-8232b83cbac0.jpg',
-    name: 'Елена Гринько',
-    role: 'Менеджер по выплатам',
-    text: 'Контролирую поступление денег на ваш счёт и оформляю все документы по итогам дела.',
-  },
 ];
 
 const LawyerBlock = () => {
@@ -34,7 +28,7 @@ const LawyerBlock = () => {
         </p>
       </div>
 
-      <div className="mt-10 grid gap-6 md:grid-cols-3">
+      <div className="mt-10 grid gap-6 sm:grid-cols-2 max-w-2xl mx-auto">
         {managers.map((m) => (
           <div
             key={m.name}
