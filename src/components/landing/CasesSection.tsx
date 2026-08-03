@@ -18,6 +18,8 @@ type CaseItem = {
   result: string;
   breakdown: { label: string; value: string }[];
   benefit: string;
+  document: string;
+  documentLabel: string;
 };
 
 const CASES: CaseItem[] = [
@@ -39,6 +41,8 @@ const CASES: CaseItem[] = [
       { label: 'Моральный вред', value: '30 000 ₽' },
     ],
     benefit: 'Доказываем «скрытые» дефекты тепловизором и не даём застройщику свалить вину на жильца.',
+    document: '/documents/case1_zeleny_bereg.jpg',
+    documentLabel: 'Решение суда · Дело № 2-1147/2025',
   },
   {
     complex: 'ЖК «Северный»',
@@ -58,6 +62,8 @@ const CASES: CaseItem[] = [
       { label: 'Моральный вред', value: '25 000 ₽' },
     ],
     benefit: 'Знание нормативов ГОСТ превращает «мелкий» дефект в крупную компенсацию.',
+    document: '/documents/case2_severny.jpg',
+    documentLabel: 'Решение суда · Дело № 2-2038/2025',
   },
   {
     complex: 'ЖК «Уютный»',
@@ -76,6 +82,8 @@ const CASES: CaseItem[] = [
       { label: 'Юридические расходы', value: '45 000 ₽' },
     ],
     benefit: 'Добиваемся выплат и через мировое соглашение — деньги быстрее, без долгого суда.',
+    document: '/documents/case3_uyutny.jpg',
+    documentLabel: 'Мировое соглашение · Дело № 2-987/2025',
   },
   {
     complex: 'ЖК «Прибрежный»',
@@ -95,6 +103,8 @@ const CASES: CaseItem[] = [
       { label: 'Моральный вред', value: '30 000 ₽' },
     ],
     benefit: 'Самый «денежный» кейс: берём не только дефекты, но и просрочку — часто это самая большая сумма.',
+    document: '/documents/case4_pribrezhny.jpg',
+    documentLabel: 'Решение суда · Дело № 2-3315/2025',
   },
   {
     complex: 'ЖК «Высотный»',
@@ -114,6 +124,8 @@ const CASES: CaseItem[] = [
       { label: 'Моральный вред', value: '20 000 ₽' },
     ],
     benefit: 'Закрываем редкую, но болезненную проблему — за вентиляцию тоже можно получить деньги.',
+    document: '/documents/case5_vysotny.jpg',
+    documentLabel: 'Решение суда · Дело № 2-1876/2025',
   },
   {
     complex: 'ЖК «Семейный»',
@@ -132,6 +144,8 @@ const CASES: CaseItem[] = [
       { label: 'Юридические расходы', value: '30 000 ₽' },
     ],
     benefit: 'Быстрый кейс с понятным дефектом — для тех, кому нужны деньги максимально скоро.',
+    document: '/documents/case6_semeyny.jpg',
+    documentLabel: 'Соглашение · Дело № 2-654/2025',
   },
 ];
 
@@ -203,6 +217,24 @@ const CasesSection = () => {
                     <Icon name="Sparkles" size={18} className="mt-0.5 shrink-0 text-gold" />
                     <p className="text-navy-light">{c.benefit}</p>
                   </div>
+
+                  <a
+                    href={c.document}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group/doc flex items-center gap-3 rounded-xl border border-border bg-secondary/40 p-3 transition hover:border-gold/50 hover:bg-secondary/70"
+                  >
+                    <img
+                      src={c.document}
+                      alt={c.documentLabel}
+                      className="h-16 w-12 shrink-0 rounded-md border border-border object-cover object-top"
+                    />
+                    <div className="min-w-0 flex-1">
+                      <p className="truncate text-sm font-semibold text-navy">{c.documentLabel}</p>
+                      <p className="text-xs text-muted-foreground">Образец документа по делу · открыть в полном размере</p>
+                    </div>
+                    <Icon name="ExternalLink" size={16} className="shrink-0 text-muted-foreground transition group-hover/doc:text-gold" />
+                  </a>
                 </div>
               </DialogContent>
             </Dialog>
