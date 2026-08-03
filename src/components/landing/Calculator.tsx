@@ -1,5 +1,13 @@
 import { useMemo, useState } from 'react';
 import Icon from '@/components/ui/icon';
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from '@/components/ui/dialog';
+
+const LEADS_API_URL = 'https://functions.poehali.dev/cbf16091-3a28-4924-964e-4e3970a40a6b';
 
 const fmt = (n: number) =>
   new Intl.NumberFormat('ru-RU', { maximumFractionDigits: 0 }).format(Math.max(0, Math.round(n)));
@@ -23,6 +31,12 @@ const Calculator = () => {
   const [windows, setWindows] = useState<number>(3);
   const [area, setArea] = useState<number>(55);
 
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [leadName, setLeadName] = useState('');
+  const [leadPhone, setLeadPhone] = useState('');
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+  const [errorMsg, setErrorMsg] = useState('');
+
   const result = useMemo(() => {
     const days = daysBetween(plannedDate, factDate);
     const keyRate = 0.16;
@@ -43,6 +57,51 @@ const Calculator = () => {
     { label: 'Штраф 50% по закону', value: result.fine, icon: 'Scale' },
     { label: 'Моральный вред', value: result.moral, icon: 'Heart' },
   ];
+
+  const openModal = () => {
+    setStatus('idle');
+    setErrorMsg('');
+    setIsModalOpen(true);
+  };
+
+  const submitLead = async () => {
+    if (leadName.trim().length < 2) {
+      setStatus('error');
+      setErrorMsg('Укажите имя');
+      return;
+    }
+    const digits = leadPhone.replace(/\D/g, '');
+    if (digits.length < 10) {
+      setStatus('error');
+      setErrorMsg('Укажите корректный телефон');
+      return;
+    }
+
+    setStatus('loading');
+    try {
+      const res = await fetch(LEADS_API_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: leadName.trim(),
+          phone: leadPhone.trim(),
+          price,
+          days: result.days,
+          total_amount: Math.round(result.total),
+        }),
+      });
+      const data = await res.json();
+      if (!res.ok || !data.success) {
+        setStatus('error');
+        setErrorMsg(data.error || 'Не удалось отправить заявку. Попробуйте ещё раз.');
+        return;
+      }
+      setStatus('success');
+    } catch {
+      setStatus('error');
+      setErrorMsg('Не удалось отправить заявку. Попробуйте ещё раз.');
+    }
+  };
 
   return (
     <div className="grid gap-8 lg:grid-cols-2 rounded-2xl border border-border bg-card overflow-hidden shadow-[0_20px_60px_-20px_hsl(var(--navy)/0.25)]">
@@ -147,11 +206,80 @@ const Calculator = () => {
           ))}
         </div>
 
-        <button className="mt-6 w-full rounded-lg bg-gold px-6 py-4 font-display text-base font-bold text-navy-deep transition hover:brightness-110 hover:shadow-lg hover:shadow-gold/20">
+        <button
+          onClick={openModal}
+          className="mt-6 w-full rounded-lg bg-gold px-6 py-4 font-display text-base font-bold text-navy-deep transition hover:brightness-110 hover:shadow-lg hover:shadow-gold/20"
+        >
           Получить точный расчёт
         </button>
         <p className="mt-3 text-center text-xs text-white/50">Расчёт ориентировочный. Точную сумму определим после осмотра.</p>
       </div>
+
+      <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
+        <DialogContent className="max-w-md border-border bg-card text-navy">
+          {status === 'success' ? (
+            <div className="py-4 text-center">
+              <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-gold/15 text-gold">
+                <Icon name="Check" size={28} />
+              </div>
+              <p className="font-display text-xl font-extrabold text-navy">Заявка принята!</p>
+              <p className="mt-2 text-sm text-muted-foreground">
+                Мы свяжемся с вами в ближайшее время, чтобы уточнить детали и провести бесплатный осмотр.
+              </p>
+            </div>
+          ) : (
+            <>
+              <DialogHeader>
+                <DialogTitle className="font-display text-xl font-extrabold text-navy">Получить точный расчёт</DialogTitle>
+              </DialogHeader>
+
+              <div className="space-y-4">
+                <div className="rounded-xl bg-secondary/60 p-4 text-sm">
+                  <div className="flex items-center justify-between">
+                    <span className="text-muted-foreground">Ориентировочная сумма</span>
+                    <span className="font-display text-lg font-black text-navy">{fmt(result.total)} ₽</span>
+                  </div>
+                </div>
+
+                <label className="block space-y-2">
+                  <span className="text-sm font-medium text-navy-light">Ваше имя</span>
+                  <input
+                    type="text"
+                    value={leadName}
+                    onChange={(e) => setLeadName(e.target.value)}
+                    placeholder="Иван Иванов"
+                    className="w-full rounded-lg border border-input bg-background px-4 py-3 text-navy outline-none focus:border-navy focus:ring-2 focus:ring-navy/15 transition"
+                  />
+                </label>
+
+                <label className="block space-y-2">
+                  <span className="text-sm font-medium text-navy-light">Телефон</span>
+                  <input
+                    type="tel"
+                    value={leadPhone}
+                    onChange={(e) => setLeadPhone(e.target.value)}
+                    placeholder="+7 (900) 000-00-00"
+                    className="w-full rounded-lg border border-input bg-background px-4 py-3 text-navy outline-none focus:border-navy focus:ring-2 focus:ring-navy/15 transition"
+                  />
+                </label>
+
+                {status === 'error' && (
+                  <p className="text-sm text-red-500">{errorMsg}</p>
+                )}
+
+                <button
+                  onClick={submitLead}
+                  disabled={status === 'loading'}
+                  className="w-full rounded-lg bg-gold px-6 py-3.5 font-display text-base font-bold text-navy-deep transition hover:brightness-110 disabled:opacity-60"
+                >
+                  {status === 'loading' ? 'Отправляем...' : 'Отправить заявку'}
+                </button>
+                <p className="text-center text-xs text-muted-foreground">Нажимая на кнопку, вы соглашаетесь на обработку персональных данных.</p>
+              </div>
+            </>
+          )}
+        </DialogContent>
+      </Dialog>
     </div>
   );
 };

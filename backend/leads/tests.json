@@ -1,0 +1,48 @@
+{
+  "tests": [
+    {
+      "name": "OPTIONS preflight",
+      "method": "OPTIONS",
+      "path": "/",
+      "expectedStatus": 200
+    },
+    {
+      "name": "Create lead success",
+      "method": "POST",
+      "path": "/",
+      "body": {
+        "name": "Тестов Тест Тестович",
+        "phone": "+7 900 123-45-67",
+        "price": 6500000,
+        "days": 120,
+        "total_amount": 500000,
+        "comment": "Тестовая заявка"
+      },
+      "expectedStatus": 200,
+      "bodyMatcher": "partial",
+      "expectedBody": {
+        "success": true
+      }
+    },
+    {
+      "name": "Missing name",
+      "method": "POST",
+      "path": "/",
+      "body": {
+        "name": "",
+        "phone": "+7 900 123-45-67"
+      },
+      "expectedStatus": 400
+    },
+    {
+      "name": "Invalid phone",
+      "method": "POST",
+      "path": "/",
+      "body": {
+        "name": "Иван Иванов",
+        "phone": "123"
+      },
+      "expectedStatus": 400
+    }
+  ]
+}
