@@ -1,7 +1,8 @@
 import Icon from '@/components/ui/icon';
 
 const RATING = 4.9;
-const REVIEWS = 214;
+const REVIEWS = 219;
+const YANDEX_MAPS_URL = 'https://yandex.ru/maps/org/regionalny_tsentr_zashchity_prav_potrebiteley/236496153598/';
 const ADDRESS = 'г. Красноярск, ул. Красной Гвардии, д. 21';
 
 const Stars = ({ value }: { value: number }) => (
@@ -73,14 +74,24 @@ const MapBlock = () => {
             </div>
           </div>
 
-          <a
-            href="https://yandex.ru/maps/?text=Красноярск%2C%20улица%20Красной%20Гвардии%2C%2021"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 rounded-lg bg-navy px-6 py-3.5 font-display font-bold text-white transition hover:bg-navy-deep"
-          >
-            <Icon name="Navigation" size={18} /> Построить маршрут
-          </a>
+          <div className="flex flex-col gap-3 sm:flex-row">
+            <a
+              href={YANDEX_MAPS_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 rounded-lg bg-navy px-6 py-3.5 font-display font-bold text-white transition hover:bg-navy-deep"
+            >
+              <Icon name="Navigation" size={18} /> Построить маршрут
+            </a>
+            <a
+              href={YANDEX_MAPS_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 rounded-lg border border-border px-6 py-3.5 font-display font-bold text-navy transition hover:bg-secondary"
+            >
+              <Icon name="Star" size={18} className="text-gold" /> Все отзывы
+            </a>
+          </div>
         </div>
 
         {/* Map */}
