@@ -10,6 +10,7 @@ import ChatHelper from '@/components/landing/ChatHelper';
 import MapBlock from '@/components/landing/MapBlock';
 import CasesSection from '@/components/landing/CasesSection';
 import LawyerBlock from '@/components/landing/LawyerBlock';
+import CourtsBlock from '@/components/landing/CourtsBlock';
 
 const stats = [
   { value: '250–700 тыс. ₽', label: 'Средний размер компенсации', icon: 'Banknote' },
@@ -179,6 +180,9 @@ const Index = () => {
           ))}
         </div>
       </section>
+
+      {/* Courts */}
+      <CourtsBlock />
 
       {/* FAQ */}
       <section className="bg-secondary/50 py-20 md:py-24">
