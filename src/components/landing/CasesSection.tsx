@@ -207,7 +207,7 @@ const CasesSection = () => {
                 </button>
               </DialogTrigger>
 
-              <DialogContent className="max-w-lg border-border bg-card text-navy max-h-[85vh] overflow-y-auto">
+              <DialogContent className="max-w-2xl border-border bg-card text-navy max-h-[90vh] overflow-y-auto">
                 <DialogHeader>
                   <p className="text-xs font-semibold uppercase tracking-[0.15em] text-gold">{c.complex} · {c.term}</p>
                   <DialogTitle className="font-display text-xl font-extrabold text-navy">{c.title}</DialogTitle>
