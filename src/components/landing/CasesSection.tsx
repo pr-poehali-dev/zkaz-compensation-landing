@@ -20,9 +20,38 @@ type CaseItem = {
   benefit: string;
   document: string;
   documentLabel: string;
+  sourceUrl?: string;
+  sourceLabel?: string;
 };
 
 const CASES: CaseItem[] = [
+  {
+    complex: 'ООО УСК «Сибиряк»',
+    icon: 'Gavel',
+    total: '352 207 ₽',
+    term: 'Декабрь 2025',
+    title: 'Строительные недостатки квартиры',
+    problem:
+      'В квартире были выявлены строительные недостатки. Застройщик не устранил их и не компенсировал стоимость исправления в добровольном порядке, поэтому дело было передано в суд.',
+    actions:
+      'Провели независимую экспертизу, зафиксировавшую стоимость устранения недостатков, подготовили и подали исковое заявление в Советский районный суд г. Красноярска.',
+    result: 'Суд удовлетворил исковые требования частично и взыскал с застройщика полную сумму компенсации, неустойку, штраф и судебные расходы.',
+    breakdown: [
+      { label: 'Стоимость строительных недостатков', value: '166 461,83 ₽' },
+      { label: 'Неустойка', value: '50 000 ₽' },
+      { label: 'Штраф 50%', value: '50 000 ₽' },
+      { label: 'Моральный вред', value: '5 000 ₽' },
+      { label: 'Юридические услуги', value: '30 000 ₽' },
+      { label: 'Услуги эксперта', value: '42 000 ₽' },
+      { label: 'Нотариальная доверенность', value: '8 500 ₽' },
+      { label: 'Почтовые расходы', value: '245 ₽' },
+    ],
+    benefit: 'Реальное дело из нашей практики — с застройщика взыскана полная сумма недостатков, неустойка, штраф и все судебные расходы.',
+    document: '/documents/case_sibiryak_ispolnitelny_list.jpg',
+    documentLabel: 'Решение суда · Советский районный суд г. Красноярска',
+    sourceUrl: 'https://sovet.krk.sudrf.ru/',
+    sourceLabel: 'Ознакомиться с делом на официальном сайте суда',
+  },
   {
     complex: 'ЖК «Зелёный берег»',
     icon: 'Snowflake',
@@ -235,6 +264,19 @@ const CasesSection = () => {
                     </div>
                     <Icon name="ExternalLink" size={16} className="shrink-0 text-muted-foreground transition group-hover/doc:text-gold" />
                   </a>
+
+                  {c.sourceUrl && (
+                    <a
+                      href={c.sourceUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2.5 rounded-xl border border-border bg-secondary/40 p-3 text-sm font-medium text-navy transition hover:border-gold/50 hover:bg-secondary/70"
+                    >
+                      <Icon name="Landmark" size={16} className="shrink-0 text-gold" />
+                      {c.sourceLabel}
+                      <Icon name="ExternalLink" size={14} className="ml-auto shrink-0 text-muted-foreground" />
+                    </a>
+                  )}
                 </div>
               </DialogContent>
             </Dialog>
