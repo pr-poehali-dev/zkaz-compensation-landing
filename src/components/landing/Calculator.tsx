@@ -1,7 +1,9 @@
 import { useMemo, useState } from 'react';
 import Icon from '@/components/ui/icon';
+import { toast } from 'sonner';
 
 const CONTACT_PHONE = '+79048916888';
+const CONTACT_PHONE_DISPLAY = '+7 (904) 891-68-88';
 
 const fmt = (n: number) =>
   new Intl.NumberFormat('ru-RU', { maximumFractionDigits: 0 }).format(Math.max(0, Math.round(n)));
@@ -24,6 +26,17 @@ const Calculator = () => {
   const [rooms, setRooms] = useState<number>(2);
   const [windows, setWindows] = useState<number>(3);
   const [area, setArea] = useState<number>(55);
+
+  const handleCallClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+    if (!isMobile) {
+      e.preventDefault();
+      navigator.clipboard?.writeText(CONTACT_PHONE_DISPLAY).catch(() => {});
+      toast.success('Номер телефона скопирован', {
+        description: CONTACT_PHONE_DISPLAY,
+      });
+    }
+  };
 
   const result = useMemo(() => {
     const days = daysBetween(plannedDate, factDate);
@@ -151,6 +164,7 @@ const Calculator = () => {
 
         <a
           href={`tel:${CONTACT_PHONE}`}
+          onClick={handleCallClick}
           className="mt-6 flex w-full items-center justify-center gap-2 rounded-lg bg-gold px-6 py-4 font-display text-base font-bold text-navy-deep transition hover:brightness-110 hover:shadow-lg hover:shadow-gold/20"
         >
           <Icon name="Phone" size={18} />
