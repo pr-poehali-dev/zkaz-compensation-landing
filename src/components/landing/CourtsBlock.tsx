@@ -6,25 +6,18 @@ interface CourtLink {
 }
 
 const courts: CourtLink[] = [
-  { name: 'Красноярский краевой суд', url: '#' },
-  { name: 'Октябрьский районный суд г. Красноярска', url: '#' },
-  { name: 'Железнодорожный районный суд г. Красноярска', url: '#' },
   { name: 'Советский районный суд г. Красноярска', url: '#' },
-  { name: 'Свердловский районный суд г. Красноярска', url: '#' },
-  { name: 'Центральный районный суд г. Красноярска', url: '#' },
-  { name: 'Кировский районный суд г. Красноярска', url: '#' },
-  { name: 'Ленинский районный суд г. Красноярска', url: '#' },
 ];
 
 const CourtsBlock = () => {
   return (
     <section className="container py-20 md:py-24">
       <div className="mx-auto mb-14 max-w-2xl text-center">
-        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-gold">Полезные ссылки</p>
-        <h2 className="mt-3 font-display text-3xl font-extrabold text-navy md:text-4xl">Суды Красноярска</h2>
-        <p className="mt-4 text-muted-foreground">Официальные сайты судов, где рассматриваются дела о защите прав потребителей.</p>
+        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-gold">Полезная ссылка</p>
+        <h2 className="mt-3 font-display text-3xl font-extrabold text-navy md:text-4xl">Суд Красноярска</h2>
+        <p className="mt-4 text-muted-foreground">Официальный сайт суда, где рассматриваются дела о защите прав потребителей.</p>
       </div>
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="mx-auto max-w-md">
         {courts.map((c) => (
           <a
             key={c.name}
