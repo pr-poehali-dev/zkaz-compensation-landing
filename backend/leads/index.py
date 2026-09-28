@@ -20,15 +20,16 @@ def send_notification(name: str, phone: str, price, days, total_amount, comment:
         f"Сумма к взысканию: {total_amount}\n"
         f"Комментарий: {comment}\n"
     )
+    recipient = 'succeed2013@yandex.ru'
     msg = MIMEText(text, 'plain', 'utf-8')
     msg['Subject'] = 'Новая заявка с сайта — точный расчёт'
     msg['From'] = sender
-    msg['To'] = sender
+    msg['To'] = recipient
 
     try:
         with smtplib.SMTP_SSL('smtp.yandex.ru', 465) as server:
             server.login(sender, password)
-            server.sendmail(sender, [sender], msg.as_string())
+            server.sendmail(sender, [recipient], msg.as_string())
     except Exception:
         pass
 
