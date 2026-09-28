@@ -30,8 +30,9 @@ def send_notification(name: str, phone: str, price, days, total_amount, comment:
         with smtplib.SMTP_SSL('smtp.yandex.ru', 465) as server:
             server.login(sender, password)
             server.sendmail(sender, [recipient], msg.as_string())
-    except Exception:
-        pass
+        print(f'Email notification sent to {recipient}')
+    except Exception as e:
+        print(f'Email notification failed: {e}')
 
 
 def handler(event: dict, context) -> dict:
