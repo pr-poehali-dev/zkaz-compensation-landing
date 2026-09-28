@@ -15,7 +15,7 @@ const CourtsBlock = () => {
       <div className="mx-auto mb-14 max-w-2xl text-center">
         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-gold">Полезная ссылка</p>
         <h2 className="mt-3 font-display text-3xl font-extrabold text-navy md:text-4xl">Суд Красноярска</h2>
-        <p className="mt-4 text-muted-foreground">Официальный сайт суда, где рассматриваются дела о защите прав потребителей.</p>
+        <p className="mt-4 text-muted-foreground">Официальный сайт суда, где рассматриваются дела о защите прав потребителей. На сайте можно ознакомиться с конкретными делами.</p>
       </div>
       <div className="mx-auto max-w-md">
         {courts.map((c) => (
