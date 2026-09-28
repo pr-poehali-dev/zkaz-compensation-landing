@@ -6,7 +6,7 @@ interface CourtLink {
 }
 
 const courts: CourtLink[] = [
-  { name: 'Советский районный суд г. Красноярска', url: '#' },
+  { name: 'Советский районный суд г. Красноярска', url: 'https://sovet.krk.sudrf.ru/' },
 ];
 
 const CourtsBlock = () => {
