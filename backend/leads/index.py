@@ -1,7 +1,36 @@
 import json
 import os
 import re
+import smtplib
+from email.mime.text import MIMEText
 import psycopg2
+
+
+def send_notification(name: str, phone: str, price, days, total_amount, comment: str) -> None:
+    sender = os.environ.get('SMTP_EMAIL')
+    password = os.environ.get('SMTP_PASSWORD')
+    if not sender or not password:
+        return
+    text = (
+        f"Новая заявка с сайта\n\n"
+        f"Имя: {name}\n"
+        f"Телефон: {phone}\n"
+        f"Цена квартиры: {price}\n"
+        f"Дней просрочки: {days}\n"
+        f"Сумма к взысканию: {total_amount}\n"
+        f"Комментарий: {comment}\n"
+    )
+    msg = MIMEText(text, 'plain', 'utf-8')
+    msg['Subject'] = 'Новая заявка с сайта — точный расчёт'
+    msg['From'] = sender
+    msg['To'] = sender
+
+    try:
+        with smtplib.SMTP_SSL('smtp.yandex.ru', 465) as server:
+            server.login(sender, password)
+            server.sendmail(sender, [sender], msg.as_string())
+    except Exception:
+        pass
 
 
 def handler(event: dict, context) -> dict:
@@ -69,6 +98,8 @@ def handler(event: dict, context) -> dict:
         cur.close()
     finally:
         conn.close()
+
+    send_notification(name, phone, price, days, total_amount, comment)
 
     return {
         'statusCode': 200,
