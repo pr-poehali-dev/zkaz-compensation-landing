@@ -228,11 +228,11 @@ const CasesSection = () => {
                   </div>
 
                   <div className="rounded-xl bg-secondary/60 p-4">
-                    <div className="space-y-2">
+                    <div className="space-y-2.5">
                       {c.breakdown.map((b) => (
-                        <div key={b.label} className="flex items-center justify-between text-sm">
+                        <div key={b.label} className="grid grid-cols-[1fr_auto] items-baseline gap-x-3 text-sm">
                           <span className="text-muted-foreground">{b.label}</span>
-                          <span className="font-semibold text-navy">{b.value}</span>
+                          <span className="whitespace-nowrap font-semibold text-navy">{b.value}</span>
                         </div>
                       ))}
                     </div>
