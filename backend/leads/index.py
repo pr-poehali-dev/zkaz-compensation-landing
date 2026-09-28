@@ -3,10 +3,11 @@ import os
 import re
 import smtplib
 from email.mime.text import MIMEText
+import urllib.request
 import psycopg2
 
 
-def send_notification(name: str, phone: str, price, days, total_amount, comment: str) -> None:
+def send_email_notification(name: str, phone: str, price, days, total_amount, comment: str) -> None:
     sender = os.environ.get('SMTP_EMAIL')
     password = os.environ.get('SMTP_PASSWORD')
     if not sender or not password:
@@ -33,6 +34,36 @@ def send_notification(name: str, phone: str, price, days, total_amount, comment:
         print(f'Email notification sent to {recipient}')
     except Exception as e:
         print(f'Email notification failed: {e}')
+
+
+def send_telegram_notification(name: str, phone: str, price, days, total_amount, comment: str) -> None:
+    token = os.environ.get('TELEGRAM_BOT_TOKEN')
+    chat_id = os.environ.get('TELEGRAM_CHAT_ID')
+    if not token or not chat_id:
+        return
+    text = (
+        f"🆕 Новая заявка с сайта\n\n"
+        f"Имя: {name}\n"
+        f"Телефон: {phone}\n"
+        f"Цена квартиры: {price}\n"
+        f"Дней просрочки: {days}\n"
+        f"Сумма к взысканию: {total_amount}\n"
+        f"Комментарий: {comment}"
+    )
+    url = f"https://api.telegram.org/bot{token}/sendMessage"
+    data = json.dumps({'chat_id': chat_id, 'text': text}).encode('utf-8')
+    req = urllib.request.Request(url, data=data, headers={'Content-Type': 'application/json'}, method='POST')
+    try:
+        with urllib.request.urlopen(req, timeout=5) as resp:
+            resp.read()
+        print('Telegram notification sent')
+    except Exception as e:
+        print(f'Telegram notification failed: {e}')
+
+
+def send_notification(name: str, phone: str, price, days, total_amount, comment: str) -> None:
+    send_email_notification(name, phone, price, days, total_amount, comment)
+    send_telegram_notification(name, phone, price, days, total_amount, comment)
 
 
 def handler(event: dict, context) -> dict:
