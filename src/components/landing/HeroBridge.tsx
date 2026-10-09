@@ -1,7 +1,7 @@
 import { useMemo, useState } from 'react';
 import Icon from '@/components/ui/icon';
 
-const IMAGE = 'https://cdn.poehali.dev/projects/bc95d7d2-5577-46ab-81ff-ded0d2e4bfc4/files/817d909e-08b3-4929-9f06-867718159b41.jpg';
+const IMAGE = '/kommunalny-most.jpg';
 const COLS = 6;
 const ROWS = 6;
 const RADIUS = 30;
@@ -95,6 +95,14 @@ const HeroBridge = () => {
           );
         })}
       </div>
+      <a
+        href="https://commons.wikimedia.org/wiki/File:Krasnoyarsk,_Bridge_over_Yenisei_River_at_twilight,_Russia.jpg"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="mt-2 block text-[10px] text-white/40 transition hover:text-white/70"
+      >
+        Фото: Vyacheslav Argenberg, CC BY 4.0
+      </a>
       {broken.size > 0 && (
         <button
           type="button"
