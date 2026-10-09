@@ -9,6 +9,7 @@ import Flyer from "./pages/Flyer";
 import FlyerA4 from "./pages/FlyerA4";
 import NotFound from "./pages/NotFound";
 import GavelCursor from "@/components/GavelCursor";
+import GavelSound from "@/components/GavelSound";
 
 const queryClient = new QueryClient();
 
@@ -18,6 +19,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <GavelCursor />
+      <GavelSound />
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
