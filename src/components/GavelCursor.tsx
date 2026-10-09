@@ -8,22 +8,14 @@ const GavelCursor = () => {
 
   useEffect(() => {
     const fine = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
-    if (!fine) return;
-
-    document.documentElement.classList.add('gavel-cursor');
     const pos = posRef.current;
     const swing = swingRef.current;
     const ripple = rippleRef.current;
     if (!pos || !swing || !ripple) return;
 
-    const onMove = (e: MouseEvent) => {
-      pos.style.opacity = '1';
-      pos.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0)`;
-      ripple.style.left = `${e.clientX}px`;
-      ripple.style.top = `${e.clientY}px`;
-    };
+    let hideTimer = 0;
 
-    const onDown = () => {
+    const strike = () => {
       swing.classList.remove('gavel-strike');
       ripple.classList.remove('gavel-ripple');
       void swing.offsetWidth;
@@ -31,19 +23,53 @@ const GavelCursor = () => {
       ripple.classList.add('gavel-ripple');
     };
 
-    const onLeave = () => {
-      pos.style.opacity = '0';
+    const place = (x: number, y: number) => {
+      pos.style.transform = `translate3d(${x}px, ${y}px, 0)`;
+      ripple.style.left = `${x}px`;
+      ripple.style.top = `${y}px`;
     };
 
-    window.addEventListener('mousemove', onMove);
-    window.addEventListener('mousedown', onDown);
-    document.addEventListener('mouseleave', onLeave);
+    if (fine) {
+      document.documentElement.classList.add('gavel-cursor');
 
+      const onMove = (e: MouseEvent) => {
+        pos.style.opacity = '1';
+        place(e.clientX, e.clientY);
+      };
+      const onDown = () => strike();
+      const onLeave = () => {
+        pos.style.opacity = '0';
+      };
+
+      window.addEventListener('mousemove', onMove);
+      window.addEventListener('mousedown', onDown);
+      document.addEventListener('mouseleave', onLeave);
+
+      return () => {
+        document.documentElement.classList.remove('gavel-cursor');
+        window.removeEventListener('mousemove', onMove);
+        window.removeEventListener('mousedown', onDown);
+        document.removeEventListener('mouseleave', onLeave);
+      };
+    }
+
+    const onTouch = (e: PointerEvent) => {
+      if (e.pointerType === 'mouse') return;
+      window.clearTimeout(hideTimer);
+      place(e.clientX, e.clientY);
+      pos.style.transition = 'none';
+      pos.style.opacity = '1';
+      strike();
+      hideTimer = window.setTimeout(() => {
+        pos.style.transition = 'opacity 0.3s';
+        pos.style.opacity = '0';
+      }, 450);
+    };
+
+    window.addEventListener('pointerdown', onTouch);
     return () => {
-      document.documentElement.classList.remove('gavel-cursor');
-      window.removeEventListener('mousemove', onMove);
-      window.removeEventListener('mousedown', onDown);
-      document.removeEventListener('mouseleave', onLeave);
+      window.clearTimeout(hideTimer);
+      window.removeEventListener('pointerdown', onTouch);
     };
   }, []);
 
