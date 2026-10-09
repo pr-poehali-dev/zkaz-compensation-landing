@@ -23,7 +23,7 @@ const Stars = ({ value }: { value: number }) => (
 
 const MapBlock = () => {
   return (
-    <section className="container py-20 md:py-24">
+    <section id="contacts" className="container py-20 md:py-24">
       <div className="mx-auto mb-14 max-w-2xl text-center">
         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-gold">Где нас найти</p>
         <h2 className="mt-3 font-display text-3xl font-extrabold text-navy md:text-4xl">

@@ -132,7 +132,7 @@ const CASES: CaseItem[] = [
 
 const CasesSection = () => {
   return (
-    <section className="bg-navy-deep py-20 md:py-24 text-white grain">
+    <section id="cases" className="bg-navy-deep py-20 md:py-24 text-white grain">
       <div className="container">
         <div className="mx-auto mb-14 max-w-2xl text-center">
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-gold">Наши кейсы</p>

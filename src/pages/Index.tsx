@@ -149,7 +149,7 @@ const Index = () => {
       <CasesSection />
 
       {/* Guarantees */}
-      <section className="container py-20 md:py-24">
+      <section id="why" className="container py-20 md:py-24">
         <div className="mx-auto mb-14 max-w-2xl text-center">
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-gold">Гарантии</p>
           <h2 className="mt-3 font-display text-3xl font-extrabold text-navy md:text-4xl">Почему нам доверяют</h2>
@@ -168,7 +168,7 @@ const Index = () => {
       </section>
 
       {/* FAQ */}
-      <section className="bg-secondary/50 py-20 md:py-24">
+      <section id="faq" className="bg-secondary/50 py-20 md:py-24">
         <div className="container max-w-3xl">
           <div className="mb-12 text-center">
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-gold">Частые вопросы</p>
@@ -208,7 +208,7 @@ const Index = () => {
 
       {/* Footer */}
       <footer className="border-t border-border bg-background py-14">
-        <div className="container grid gap-10 md:grid-cols-3">
+        <div className="container grid gap-10 md:grid-cols-2 lg:grid-cols-4">
           <div>
             <div className="flex items-center gap-2.5">
               <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-navy text-white">
@@ -219,6 +219,25 @@ const Index = () => {
             <p className="mt-4 max-w-xs text-sm text-muted-foreground">
               Взыскиваем компенсации за дефекты и просрочку с застройщиков. Оплата только по результату.
             </p>
+          </div>
+
+          <div>
+            <p className="font-display font-bold text-navy">Карта сайта</p>
+            <nav className="mt-4 flex flex-col gap-3 text-sm text-muted-foreground">
+              {[
+                { href: '#calc', label: 'Что мы найдём в квартире' },
+                { href: '#how', label: 'Как мы работаем' },
+                { href: '#team', label: 'Кто ведёт ваше дело' },
+                { href: '#cases', label: 'Выигранные дела' },
+                { href: '#why', label: 'Почему нам доверяют' },
+                { href: '#faq', label: 'Вопросы и ответы' },
+                { href: '#contacts', label: 'Где нас найти' },
+              ].map((l) => (
+                <a key={l.href} href={l.href} className="transition hover:text-navy">
+                  {l.label}
+                </a>
+              ))}
+            </nav>
           </div>
 
           <div>

@@ -17,7 +17,7 @@ const managers = [
 
 const LawyerBlock = () => {
   return (
-    <section className="container py-20 md:py-24">
+    <section id="team" className="container py-20 md:py-24">
       <div className="text-center">
         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-gold">Кто ведёт ваше дело</p>
         <h2 className="mt-3 font-display text-2xl font-extrabold text-navy md:text-3xl">
