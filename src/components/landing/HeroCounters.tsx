@@ -8,7 +8,7 @@ type Counter = {
 };
 
 const COUNTERS: Counter[] = [
-  { to: 1.79, decimals: 2, suffix: ' млн ₽', label: 'Взыскано по 6 делам из кейсов' },
+  { to: 50, suffix: '%', label: 'Штраф с застройщика сверх суммы компенсации' },
   { to: 1000, suffix: '+', label: 'Выигранных дел' },
   { to: 14, suffix: '+ лет', label: 'Опыта работы с застройщиками' },
 ];
