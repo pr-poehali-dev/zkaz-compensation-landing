@@ -69,9 +69,14 @@ const Index = () => {
             </div>
             <span className="font-display text-lg font-extrabold tracking-tight text-navy">Региональный центр защиты прав потребителей</span>
           </div>
-          <a href="#calc" className="hidden rounded-lg bg-navy px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-navy-deep sm:inline-block">
-            Рассчитать компенсацию
-          </a>
+          <div className="flex items-center gap-4">
+            <a href="tel:+79048916888" className="hidden items-center gap-2 font-display text-base font-bold text-navy transition hover:text-gold md:inline-flex">
+              <Icon name="Phone" size={16} /> +7 (904) 891-68-88
+            </a>
+            <a href="#calc" className="hidden rounded-lg bg-navy px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-navy-deep sm:inline-block">
+              Рассчитать компенсацию
+            </a>
+          </div>
         </div>
       </header>
 
@@ -94,6 +99,15 @@ const Index = () => {
               </a>
               <a href="#how" className="inline-flex items-center justify-center gap-2 rounded-lg border border-white/20 px-7 py-4 font-semibold text-white transition hover:bg-white/10">
                 Как мы работаем
+              </a>
+            </div>
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-6 animate-fade-in" style={{ animationDelay: '0.4s', opacity: 0 }}>
+              <span className="text-xs font-semibold uppercase tracking-wider text-white/50">Связаться с нами</span>
+              <a href="tel:+79048916888" className="inline-flex items-center gap-2 font-display text-lg font-bold text-white transition hover:text-gold">
+                <Icon name="Phone" size={18} className="text-gold" /> +7 (904) 891-68-88
+              </a>
+              <a href="mailto:succeed2013@yandex.ru" className="inline-flex items-center gap-2 text-base font-semibold text-white/80 transition hover:text-gold">
+                <Icon name="Mail" size={18} className="text-gold" /> succeed2013@yandex.ru
               </a>
             </div>
             <div className="mt-10 flex flex-wrap gap-x-8 gap-y-3 text-sm text-white/60">
