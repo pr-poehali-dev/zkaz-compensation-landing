@@ -2,21 +2,22 @@ import { useEffect, useRef, useState } from 'react';
 
 type Counter = {
   to: number;
+  from?: number;
   decimals?: number;
   suffix: string;
   label: string;
 };
 
 const COUNTERS: Counter[] = [
-  { to: 50, suffix: '%', label: 'Штраф с застройщика сверх суммы компенсации' },
+  { from: 50000, to: 0, suffix: ' ₽', label: 'Предоплата — платите только после выплаты вам' },
   { to: 1000, suffix: '+', label: 'Выигранных дел' },
   { to: 14, suffix: '+ лет', label: 'Опыта работы с застройщиками' },
 ];
 
 const DURATION = 1800;
 
-const useCountUp = (to: number, decimals: number, start: boolean) => {
-  const [value, setValue] = useState(0);
+const useCountUp = (to: number, decimals: number, start: boolean, from = 0) => {
+  const [value, setValue] = useState(from);
 
   useEffect(() => {
     if (!start) return;
@@ -25,12 +26,12 @@ const useCountUp = (to: number, decimals: number, start: boolean) => {
     const tick = (now: number) => {
       const p = Math.min((now - t0) / DURATION, 1);
       const eased = 1 - Math.pow(1 - p, 3);
-      setValue(to * eased);
+      setValue(from + (to - from) * eased);
       if (p < 1) frame = requestAnimationFrame(tick);
     };
     frame = requestAnimationFrame(tick);
     return () => cancelAnimationFrame(frame);
-  }, [to, start]);
+  }, [to, from, start]);
 
   return value.toLocaleString('ru-RU', {
     minimumFractionDigits: decimals,
@@ -38,8 +39,8 @@ const useCountUp = (to: number, decimals: number, start: boolean) => {
   });
 };
 
-const CounterItem = ({ to, decimals = 0, suffix, label, start }: Counter & { start: boolean }) => {
-  const text = useCountUp(to, decimals, start);
+const CounterItem = ({ to, from, decimals = 0, suffix, label, start }: Counter & { start: boolean }) => {
+  const text = useCountUp(to, decimals, start, from);
   return (
     <div>
       <p className="font-display text-3xl font-black text-gold md:text-4xl">
