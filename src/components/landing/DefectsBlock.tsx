@@ -1,7 +1,6 @@
 import Icon from '@/components/ui/icon';
+import CallPicker from '@/components/landing/CallPicker';
 
-const CONTACT_PHONE = '+79048916888';
-const CONTACT_PHONE_DISPLAY = '+7 (904) 891-68-88 / +7 (995) 440-77-50';
 
 const defects = [
   { icon: 'Square', title: 'Окна и стеклопакеты', text: 'Продувание, перекосы, трещины, нарушенный монтажный шов', amount: 'до 120 000 ₽' },
@@ -13,15 +12,6 @@ const defects = [
 ];
 
 const DefectsBlock = () => {
-  const handleCallClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
-    if (!isMobile) {
-      e.preventDefault();
-      navigator.clipboard?.writeText(CONTACT_PHONE_DISPLAY).catch(() => {});
-      window.alert(`Позвоните нам: ${CONTACT_PHONE_DISPLAY}`);
-    }
-  };
-
   return (
     <div>
       <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
@@ -42,14 +32,7 @@ const DefectsBlock = () => {
           <p className="font-display text-xl font-bold">Не уверены, есть ли дефекты у вас?</p>
           <p className="mt-1 text-sm text-white/70">Дефекты есть в каждой квартире — их просто не видно без экспертного осмотра.</p>
         </div>
-        <a
-          href={`tel:${CONTACT_PHONE}`}
-          onClick={handleCallClick}
-          className="inline-flex shrink-0 items-center justify-center gap-2 rounded-lg bg-gold px-7 py-4 font-display text-base font-bold text-navy-deep transition hover:brightness-110"
-        >
-          <Icon name="Phone" size={18} />
-          Позвонить
-        </a>
+        <CallPicker           className="inline-flex shrink-0 items-center justify-center gap-2 rounded-lg bg-gold px-7 py-4 font-display text-base font-bold text-navy-deep transition hover:brightness-110">Позвонить</CallPicker>
       </div>
     </div>
   );
