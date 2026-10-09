@@ -11,7 +11,6 @@ import ChatHelper from '@/components/landing/ChatHelper';
 import MapBlock from '@/components/landing/MapBlock';
 import CasesSection from '@/components/landing/CasesSection';
 import LawyerBlock from '@/components/landing/LawyerBlock';
-import HeroCounters from '@/components/landing/HeroCounters';
 
 const stats = [
   { value: '250–700 тыс. ₽', label: 'Средний размер компенсации', icon: 'Banknote' },
@@ -110,7 +109,6 @@ const Index = () => {
               <span className="flex items-center gap-2"><Icon name="FileCheck2" size={16} className="text-gold" /> Всё фиксируем в договоре</span>
               <span className="flex items-center gap-2"><Icon name="Clock" size={16} className="text-gold" /> Ответ 24/7 в чате</span>
             </div>
-            <HeroCounters />
           </div>
         </div>
       </section>
