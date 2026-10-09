@@ -219,9 +219,13 @@ const Index = () => {
           <div>
             <p className="font-display font-bold text-navy">Мы на связи</p>
             <div className="mt-4 flex gap-3">
-              {['Send', 'MessageCircle', 'Phone', 'Instagram'].map((n) => (
-                <a key={n} href="#" className="flex h-10 w-10 items-center justify-center rounded-lg border border-border text-navy transition hover:bg-navy hover:text-white">
-                  <Icon name={n} size={18} />
+              {[
+                { icon: 'Phone', href: 'tel:+79048916888', label: 'Позвонить' },
+                { icon: 'MessageCircle', href: '#', label: 'Max' },
+                { icon: 'Send', href: 'https://t.me/+79048916888', label: 'Telegram' },
+              ].map((n) => (
+                <a key={n.label} href={n.href} aria-label={n.label} title={n.label} className="flex h-10 w-10 items-center justify-center rounded-lg border border-border text-navy transition hover:bg-navy hover:text-white">
+                  <Icon name={n.icon} size={18} />
                 </a>
               ))}
             </div>
