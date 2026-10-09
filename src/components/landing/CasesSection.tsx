@@ -24,7 +24,7 @@ type CaseItem = {
   sourceLabel?: string;
 };
 
-const CASES: CaseItem[] = [
+export const CASES: CaseItem[] = [
   {
     complex: 'ООО УСК «Сибиряк»',
     icon: 'Gavel',
