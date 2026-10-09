@@ -5,7 +5,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion';
-import Calculator from '@/components/landing/Calculator';
+import DefectsBlock from '@/components/landing/DefectsBlock';
 import ChatHelper from '@/components/landing/ChatHelper';
 import MapBlock from '@/components/landing/MapBlock';
 import CasesSection from '@/components/landing/CasesSection';
@@ -119,11 +119,11 @@ const Index = () => {
       {/* Calculator */}
       <section id="calc" className="container py-20 md:py-24">
         <div className="mx-auto mb-10 max-w-2xl text-center">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-gold">Сколько можно взыскать</p>
-          <h2 className="mt-3 font-display text-3xl font-extrabold text-navy md:text-4xl">Узнайте свою сумму за минуту</h2>
-          <p className="mt-4 text-muted-foreground">Введите данные из договора — расчёт появится мгновенно.</p>
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-gold">Бесплатный осмотр</p>
+          <h2 className="mt-3 font-display text-3xl font-extrabold text-navy md:text-4xl">Что мы найдём в вашей квартире</h2>
+          <p className="mt-4 text-muted-foreground">Типичные дефекты новостроек и компенсация, которую можно взыскать.</p>
         </div>
-        <Calculator />
+        <DefectsBlock />
       </section>
 
       {/* Stats */}
