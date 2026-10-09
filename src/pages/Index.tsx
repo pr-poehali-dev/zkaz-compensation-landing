@@ -6,6 +6,7 @@ import {
   AccordionTrigger,
 } from '@/components/ui/accordion';
 import DefectsBlock from '@/components/landing/DefectsBlock';
+import ProcedureBlock from '@/components/landing/ProcedureBlock';
 import ChatHelper from '@/components/landing/ChatHelper';
 import MapBlock from '@/components/landing/MapBlock';
 import CasesSection from '@/components/landing/CasesSection';
@@ -115,6 +116,8 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      <ProcedureBlock />
 
       {/* Calculator */}
       <section id="calc" className="container py-20 md:py-24">
