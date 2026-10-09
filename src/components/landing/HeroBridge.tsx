@@ -72,10 +72,10 @@ const HeroBridge = () => {
   };
 
   return (
-    <div className="absolute right-6 top-1/2 hidden -translate-y-1/2 xl:block">
+    <div className="absolute right-6 top-1/2 z-20 hidden -translate-y-1/2 xl:block">
       <div
         onClick={smash}
-        className="relative h-[400px] w-[400px] overflow-hidden rounded-2xl"
+        className="relative h-[400px] w-[400px] cursor-pointer overflow-hidden rounded-2xl border border-white/10"
       >
         <img src={IMAGE} alt="Коммунальный мост в Красноярске" className="absolute inset-0 h-full w-full object-cover" />
         {tiles.map((t, i) => {
