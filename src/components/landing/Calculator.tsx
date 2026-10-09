@@ -3,7 +3,7 @@ import Icon from '@/components/ui/icon';
 import { toast } from 'sonner';
 
 const CONTACT_PHONE = '+79048916888';
-const CONTACT_PHONE_DISPLAY = '+7 (904) 891-68-88';
+const CONTACT_PHONE_DISPLAY = '+7 (904) 891-68-88 / +7 (995) 440-77-50';
 
 const fmt = (n: number) =>
   new Intl.NumberFormat('ru-RU', { maximumFractionDigits: 0 }).format(Math.max(0, Math.round(n)));
@@ -33,7 +33,7 @@ const Calculator = () => {
     if (!isMobile) {
       e.preventDefault();
       navigator.clipboard?.writeText(CONTACT_PHONE_DISPLAY).catch(() => {});
-      toast.success('Номер телефона скопирован', {
+      toast.success('Номера телефонов скопированы', {
         description: CONTACT_PHONE_DISPLAY,
       });
     }

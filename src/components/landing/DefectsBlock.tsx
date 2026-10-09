@@ -1,7 +1,7 @@
 import Icon from '@/components/ui/icon';
 
 const CONTACT_PHONE = '+79048916888';
-const CONTACT_PHONE_DISPLAY = '+7 (904) 891-68-88';
+const CONTACT_PHONE_DISPLAY = '+7 (904) 891-68-88 / +7 (995) 440-77-50';
 
 const defects = [
   { icon: 'Square', title: 'Окна и стеклопакеты', text: 'Продувание, перекосы, трещины, нарушенный монтажный шов', amount: 'до 120 000 ₽' },

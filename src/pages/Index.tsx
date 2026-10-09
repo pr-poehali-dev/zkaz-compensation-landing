@@ -65,9 +65,14 @@ const Index = () => {
             <span className="font-display text-lg font-extrabold tracking-tight text-navy">Региональный центр защиты прав потребителей</span>
           </div>
           <div className="flex items-center gap-4">
-            <a href="tel:+79048916888" className="hidden items-center gap-2 font-display text-base font-bold text-navy transition hover:text-gold md:inline-flex">
-              <Icon name="Phone" size={16} /> +7 (904) 891-68-88
-            </a>
+            <div className="hidden flex-col items-end leading-tight md:flex">
+              <a href="tel:+79048916888" className="inline-flex items-center gap-2 font-display text-sm font-bold text-navy transition hover:text-gold">
+                <Icon name="Phone" size={14} /> +7 (904) 891-68-88
+              </a>
+              <a href="tel:+79954407750" className="inline-flex items-center gap-2 font-display text-sm font-bold text-navy transition hover:text-gold">
+                <Icon name="Phone" size={14} /> +7 (995) 440-77-50
+              </a>
+            </div>
           </div>
         </div>
       </header>
@@ -94,6 +99,9 @@ const Index = () => {
               <span className="text-xs font-semibold uppercase tracking-wider text-white/50">Связаться с нами</span>
               <a href="tel:+79048916888" className="inline-flex items-center gap-2 font-display text-lg font-bold text-white transition hover:text-gold">
                 <Icon name="Phone" size={18} className="text-gold" /> +7 (904) 891-68-88
+              </a>
+              <a href="tel:+79954407750" className="inline-flex items-center gap-2 font-display text-lg font-bold text-white transition hover:text-gold">
+                <Icon name="Phone" size={18} className="text-gold" /> +7 (995) 440-77-50
               </a>
             </div>
             <div className="mt-10 flex flex-wrap gap-x-8 gap-y-3 text-sm text-white/60">
@@ -187,9 +195,14 @@ const Index = () => {
         <div className="container max-w-2xl">
           <h2 className="font-display text-3xl font-extrabold md:text-4xl">Готовы узнать свою сумму?</h2>
           <p className="mt-4 text-white/70">Бесплатный осмотр и расчёт</p>
-          <a href="tel:+79048916888" className="mt-8 inline-flex items-center justify-center gap-2 rounded-lg bg-gold px-8 py-4 font-display text-base font-bold text-navy-deep transition hover:brightness-110">
-            <Icon name="Phone" size={20} /> +7 (904) 891-68-88
-          </a>
+          <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+            <a href="tel:+79048916888" className="inline-flex items-center justify-center gap-2 rounded-lg bg-gold px-8 py-4 font-display text-base font-bold text-navy-deep transition hover:brightness-110">
+              <Icon name="Phone" size={20} /> +7 (904) 891-68-88
+            </a>
+            <a href="tel:+79954407750" className="inline-flex items-center justify-center gap-2 rounded-lg bg-gold px-8 py-4 font-display text-base font-bold text-navy-deep transition hover:brightness-110">
+              <Icon name="Phone" size={20} /> +7 (995) 440-77-50
+            </a>
+          </div>
         </div>
       </section>
 

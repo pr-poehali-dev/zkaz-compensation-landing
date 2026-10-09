@@ -142,7 +142,7 @@ const Flyer = () => {
             <div className="flex items-center justify-between gap-4 rounded-2xl bg-white/10 p-4 my-2.5 px-[13px] py-[19px]">
               <div>
                 <p className="font-display text-sm font-bold text-gold">Рассчитать компенсацию за 1 минуту</p>
-                <p className="text-white/60 my-1 py-0 px-0 text-xl">Или позвоните: +7 (904) 891-68-88</p>
+                <p className="text-white/60 my-1 py-0 px-0 text-xl">Или позвоните: +7 (904) 891-68-88, +7 (995) 440-77-50</p>
                 <p className="text-[11px] text-white/60">MAX / WhatsApp / Telegram</p>
               </div>
               <div className="flex h-[25mm] w-[25mm] shrink-0 items-center justify-center rounded-lg bg-white p-1.5">
@@ -191,7 +191,7 @@ const Flyer = () => {
               <p className="font-display text-[11px] font-bold uppercase tracking-wide text-white/70">Позвоните или напишите</p>
               <div className="flex flex-wrap items-center gap-x-3 gap-y-0.5">
                 <span className="font-display text-sm font-bold text-gold whitespace-nowrap">+7 (904) 891-68-88</span>
-                <span className="font-display text-sm font-bold text-gold whitespace-nowrap"></span>
+                <span className="font-display text-sm font-bold text-gold whitespace-nowrap">+7 (995) 440-77-50</span>
               </div>
               <p className="text-[11px] text-white/70">
                 Или отсканируйте QR с лицевой стороны, чтобы рассчитать компенсацию за 1 минуту.
