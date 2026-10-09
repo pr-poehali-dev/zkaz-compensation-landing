@@ -18,6 +18,7 @@ const PRICE_PER_ROOM = 5000;
 const PRICE_PER_WINDOW = 40000;
 const PRICE_PER_SQM = 500;
 const DEFECTS_CAP_RATE = 0.03;
+const DEFECTS_PRICE_RATE = 0.01;
 
 const Calculator = () => {
   const [price, setPrice] = useState<number>(6500000);
@@ -43,7 +44,7 @@ const Calculator = () => {
     const keyRate = 0.16;
     const penalty = price * (1 / 300) * keyRate * days * 2;
     const defectsCap = price * DEFECTS_CAP_RATE;
-    const defectsRaw = rooms * PRICE_PER_ROOM + windows * PRICE_PER_WINDOW + area * PRICE_PER_SQM;
+    const defectsRaw = price * DEFECTS_PRICE_RATE + rooms * PRICE_PER_ROOM + windows * PRICE_PER_WINDOW + area * PRICE_PER_SQM;
     const defects = Math.min(defectsRaw, defectsCap);
     const base = penalty + defects;
     const fine = base * 0.5;
