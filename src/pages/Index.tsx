@@ -14,7 +14,7 @@ import LawyerBlock from '@/components/landing/LawyerBlock';
 const stats = [
   { value: '250–700 тыс. ₽', label: 'Средний размер компенсации', icon: 'Banknote' },
   { value: '6–8 месяцев', label: 'Средний срок от осмотра до выплаты денег', icon: 'CalendarClock' },
-  { value: '75 млн ₽', label: 'Взыскали за 2025 год для 234 дольщиков', icon: 'TrendingUp' },
+  { value: '14+ лет', label: 'Опыт работы с застройщиками, более 1000 выигранных дел', icon: 'TrendingUp' },
 ];
 
 const steps = [
