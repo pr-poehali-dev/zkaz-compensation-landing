@@ -198,3 +198,18 @@
     animation: none;
   }
 }
+
+.confetti-piece {
+  position: absolute;
+  top: -12px;
+  width: 8px;
+  height: 14px;
+  border-radius: 2px;
+  animation-name: confetti-fall;
+  animation-timing-function: ease-in;
+  animation-fill-mode: forwards;
+}
+
+@keyframes confetti-fall {
+  to { top: 105%; margin-left: 40px; opacity: 0.2; }
+}
