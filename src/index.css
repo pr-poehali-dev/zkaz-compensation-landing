@@ -198,3 +198,19 @@
     animation: none;
   }
 }
+
+.glass-fall {
+  animation: glass-fall 1.1s cubic-bezier(0.55, 0, 0.9, 0.6) forwards;
+}
+
+@keyframes glass-fall {
+  0% { transform: translate(0, 0) rotate(0deg); opacity: 1; }
+  15% { transform: translate(calc(var(--dx) * 0.2), 4px) rotate(calc(var(--rot) * 0.2)); opacity: 1; }
+  100% { transform: translate(var(--dx), 380px) rotate(var(--rot)); opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .glass-fall {
+    animation-duration: 0.01s;
+  }
+}
