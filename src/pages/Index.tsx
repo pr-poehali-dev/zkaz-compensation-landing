@@ -11,6 +11,7 @@ import ChatHelper from '@/components/landing/ChatHelper';
 import MapBlock from '@/components/landing/MapBlock';
 import CasesSection from '@/components/landing/CasesSection';
 import LawyerBlock from '@/components/landing/LawyerBlock';
+import GoldLetters from '@/components/landing/GoldLetters';
 import CasesTicker from '@/components/landing/CasesTicker';
 
 const stats = [
@@ -88,7 +89,7 @@ const Index = () => {
               <Icon name="ShieldCheck" size={14} /> Оплата только по результату
             </span>
             <h1 className="mt-6 font-display text-4xl font-black leading-[1.1] text-balance md:text-6xl animate-slide-up">
-              Взыщем компенсацию за дефекты вашей квартиры
+              <GoldLetters text="Взыщем компенсацию за дефекты вашей квартиры" />
             </h1>
             <p className="mt-6 max-w-xl text-lg text-white/70 animate-fade-in" style={{ animationDelay: '0.15s', opacity: 0 }}>От 250 000 до 700 000 ₽ с застройщика — без предоплаты. Экспертизу и претензию берём на себя, вы платите процент только после выплаты.</p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row animate-fade-in" style={{ animationDelay: '0.3s', opacity: 0 }}>
