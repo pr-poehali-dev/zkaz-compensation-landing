@@ -8,6 +8,7 @@ import Index from "./pages/Index";
 import Flyer from "./pages/Flyer";
 import FlyerA4 from "./pages/FlyerA4";
 import NotFound from "./pages/NotFound";
+import GavelCursor from "@/components/GavelCursor";
 
 const queryClient = new QueryClient();
 
@@ -16,6 +17,7 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
+      <GavelCursor />
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
