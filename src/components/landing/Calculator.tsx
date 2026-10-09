@@ -17,7 +17,7 @@ const daysBetween = (a: string, b: string) => {
 const PRICE_PER_ROOM = 30000;
 const PRICE_PER_WINDOW = 16000;
 const PRICE_PER_SQM = 3000;
-const DEFECTS_CAP_RATE = 0.06;
+const TOTAL_CAP_RATE = 0.03;
 
 const Calculator = () => {
   const [price, setPrice] = useState<number>(6500000);
@@ -42,14 +42,23 @@ const Calculator = () => {
     const days = daysBetween(plannedDate, factDate);
     const keyRate = 0.16;
     const penalty = price * (1 / 300) * keyRate * days * 2;
-    const defectsCap = price * DEFECTS_CAP_RATE;
     const defectsRaw = rooms * PRICE_PER_ROOM + windows * PRICE_PER_WINDOW + area * PRICE_PER_SQM;
-    const defects = Math.min(defectsRaw, defectsCap);
-    const base = penalty + defects;
-    const fine = base * 0.5;
-    const moral = 30000;
-    const total = base + fine + moral;
-    return { days, penalty, defects, defectsCap, fine, moral, total };
+    const moralRaw = 30000;
+    const base = penalty + defectsRaw;
+    const rawTotal = base * 1.5 + moralRaw;
+    const totalCap = price * TOTAL_CAP_RATE;
+    const k = rawTotal > totalCap && rawTotal > 0 ? totalCap / rawTotal : 1;
+    const capped = k < 1;
+    return {
+      days,
+      penalty: penalty * k,
+      defects: defectsRaw * k,
+      fine: base * 0.5 * k,
+      moral: moralRaw * k,
+      total: rawTotal * k,
+      totalCap,
+      capped,
+    };
   }, [price, plannedDate, factDate, rooms, windows, area]);
 
   const rows = [
@@ -135,10 +144,10 @@ const Calculator = () => {
           <Icon name="Info" size={16} />
           Просрочка: <span className="font-semibold text-navy">{result.days} дн.</span> Расчёт по ключевой ставке 16%.
         </div>
-        {result.defects >= result.defectsCap && (
+        {result.capped && (
           <div className="flex items-center gap-2 text-sm text-muted-foreground">
             <Icon name="ShieldAlert" size={16} />
-            Компенсация за дефекты ограничена 6% от цены квартиры ({fmt(result.defectsCap)} ₽).
+            Общая сумма ограничена 3% от цены квартиры ({fmt(result.totalCap)} ₽).
           </div>
         )}
       </div>
