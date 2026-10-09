@@ -9,7 +9,7 @@ type Counter = {
 };
 
 const COUNTERS: Counter[] = [
-  { from: 50000, to: 0, suffix: ' ₽', label: 'Предоплата — платите только после выплаты вам' },
+  { to: 24, suffix: '/7', label: 'Отвечаем на ваши вопросы в чате' },
   { to: 1000, suffix: '+', label: 'Выигранных дел' },
   { to: 14, suffix: '+ лет', label: 'Опыта работы с застройщиками' },
 ];
