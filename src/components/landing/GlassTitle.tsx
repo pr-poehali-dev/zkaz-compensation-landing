@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Icon from '@/components/ui/icon';
+import { playGlass } from '@/lib/glassSound';
 
 type Crack = {
   top: string;
@@ -44,6 +45,7 @@ const GlassTitle = ({ text, className }: { text: string; className?: string }) =
   const [cracks, setCracks] = useState<Record<number, Crack>>({});
 
   const smash = (i: number) => {
+    if (!cracks[i]) playGlass();
     setCracks((prev) => (prev[i] ? prev : { ...prev, [i]: makeCrack() }));
   };
 

@@ -1,5 +1,6 @@
 import { useMemo, useState } from 'react';
 import Icon from '@/components/ui/icon';
+import { playGlass } from '@/lib/glassSound';
 
 const IMAGE = '/kommunalny-most.jpg';
 const COLS = 6;
@@ -60,6 +61,8 @@ const HeroBridge = () => {
     const rect = e.currentTarget.getBoundingClientRect();
     const x = ((e.clientX - rect.left) / rect.width) * 100;
     const y = ((e.clientY - rect.top) / rect.height) * 100;
+    const fresh = tiles.some((t, i) => !broken.has(i) && Math.hypot(t.cx - x, t.cy - y) <= RADIUS);
+    if (fresh) playGlass();
     setBroken((prev) => {
       const next = new Map(prev);
       tiles.forEach((t, i) => {
