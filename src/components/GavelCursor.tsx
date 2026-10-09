@@ -59,8 +59,8 @@ const GavelCursor = () => {
         className="pointer-events-none fixed left-0 top-0 z-[9999] opacity-0"
         style={{ willChange: 'transform' }}
       >
-        <div ref={swingRef} className="gavel-swing" style={{ transformOrigin: '15% 85%' }}>
-          <div style={{ transform: 'scaleX(-1)' }}>
+        <div ref={swingRef} className="gavel-swing" style={{ transformOrigin: '28px 28px', width: 34, height: 34 }}>
+          <div className="block leading-none" style={{ transform: 'scaleX(-1)' }}>
             <Icon name="Gavel" size={34} className="text-gold drop-shadow-[0_2px_2px_rgba(0,0,0,0.6)]" />
           </div>
         </div>

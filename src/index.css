@@ -145,7 +145,7 @@
 }
 
 .gavel-swing {
-  transform: translate(-28px, -6px) rotate(0deg);
+  transform: translate(-7px, -8px) rotate(0deg);
 }
 
 .gavel-strike {
@@ -157,10 +157,10 @@
 }
 
 @keyframes gavel-strike {
-  0% { transform: translate(-28px, -6px) rotate(0deg); }
-  35% { transform: translate(-28px, -6px) rotate(38deg); }
-  60% { transform: translate(-28px, -6px) rotate(-14deg); }
-  100% { transform: translate(-28px, -6px) rotate(0deg); }
+  0% { transform: translate(-7px, -8px) rotate(0deg); }
+  35% { transform: translate(-7px, -8px) rotate(38deg); }
+  60% { transform: translate(-7px, -8px) rotate(-14deg); }
+  100% { transform: translate(-7px, -8px) rotate(0deg); }
 }
 
 @keyframes gavel-ripple {
