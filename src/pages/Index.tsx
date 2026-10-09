@@ -11,7 +11,6 @@ import ChatHelper from '@/components/landing/ChatHelper';
 import MapBlock from '@/components/landing/MapBlock';
 import CasesSection from '@/components/landing/CasesSection';
 import LawyerBlock from '@/components/landing/LawyerBlock';
-import WordGame from '@/components/landing/WordGame';
 import CasesTicker from '@/components/landing/CasesTicker';
 
 const stats = [
@@ -88,10 +87,9 @@ const Index = () => {
             <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-gold animate-fade-in">
               <Icon name="ShieldCheck" size={14} /> Оплата только по результату
             </span>
-            <WordGame
-              className="mt-6 font-display text-4xl font-black leading-[1.1] text-balance md:text-6xl animate-slide-up"
-              text="Взыщем компенсацию за дефекты вашей квартиры"
-            />
+            <h1 className="mt-6 font-display text-4xl font-black leading-[1.1] text-balance md:text-6xl animate-slide-up">
+              Взыщем компенсацию за дефекты вашей квартиры
+            </h1>
             <p className="mt-6 max-w-xl text-lg text-white/70 animate-fade-in" style={{ animationDelay: '0.15s', opacity: 0 }}>От 250 000 до 700 000 ₽ с застройщика — без предоплаты. Экспертизу и претензию берём на себя, вы платите процент только после выплаты.</p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row animate-fade-in" style={{ animationDelay: '0.3s', opacity: 0 }}>
               <a href="#how" className="inline-flex items-center justify-center gap-2 rounded-lg border border-white/20 px-7 py-4 font-semibold text-white transition hover:bg-white/10">
