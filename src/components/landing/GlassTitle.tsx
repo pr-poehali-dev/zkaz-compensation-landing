@@ -10,6 +10,13 @@ type Crack = {
   shards: { left: number; size: number; dx: number; rot: number; delay: number }[];
 };
 
+const WARNINGS: Record<number, { icon: string; text: string }> = {
+  3: { icon: 'TriangleAlert', text: 'Остановитесь! Вы разбили уже 3 буквы. Вывеска стеклянная и не застрахована.' },
+  6: { icon: 'Siren', text: 'Серьёзно? Уже 6 букв. Мы вызвали стекольщика, но он обедает.' },
+  9: { icon: 'Hammer', text: 'Девять! Юристы предупреждают: порча имущества сайта наказуема печеньем.' },
+  12: { icon: 'HeartCrack', text: 'Ну хоть что-нибудь нам оставьте!' },
+};
+
 const rand = (a: number, b: number) => a + Math.random() * (b - a);
 
 const makeCrack = (): Crack => {
@@ -39,6 +46,11 @@ const GlassTitle = ({ text, className }: { text: string; className?: string }) =
   const smash = (i: number) => {
     setCracks((prev) => (prev[i] ? prev : { ...prev, [i]: makeCrack() }));
   };
+
+  const count = Object.keys(cracks).length;
+  const stages = Object.keys(WARNINGS).map(Number).filter((n) => n <= count);
+  const warning = stages.length ? WARNINGS[stages[stages.length - 1]] : null;
+  const warningKey = stages.length ? stages[stages.length - 1] : 0;
 
   const restore = () => setCracks({});
 
@@ -98,7 +110,17 @@ const GlassTitle = ({ text, className }: { text: string; className?: string }) =
           </span>
         ))}
       </h1>
-      {Object.keys(cracks).length > 0 && (
+      {warning && (
+        <div
+          key={warningKey}
+          role="alert"
+          className="mt-4 flex max-w-xl items-start gap-3 rounded-xl border border-gold/50 bg-gold/10 px-4 py-3 text-sm font-semibold text-gold animate-scale-in"
+        >
+          <Icon name={warning.icon} size={20} className="mt-0.5 shrink-0" />
+          <span>{warning.text}</span>
+        </div>
+      )}
+      {count > 0 && (
         <button
           type="button"
           onClick={restore}
