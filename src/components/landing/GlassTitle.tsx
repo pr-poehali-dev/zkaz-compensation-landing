@@ -120,7 +120,7 @@ const GlassTitle = ({ text, className }: { text: string; className?: string }) =
           <span>{warning.text}</span>
         </div>
       )}
-      {count > 0 && (
+      {count >= 12 && (
         <button
           type="button"
           onClick={restore}
