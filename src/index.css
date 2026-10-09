@@ -214,3 +214,32 @@
     animation-duration: 0.01s;
   }
 }
+
+.coin-drop {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: -12px 0 0 -12px;
+  border-radius: 9999px;
+  border: 2px solid #b8860b;
+  background: radial-gradient(circle at 30% 30%, #fff3a8, #facc15 55%, #d89b0a);
+  color: #7a5200;
+  font-weight: 900;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.35);
+  animation-name: coin-drop;
+  animation-timing-function: ease-in;
+  animation-fill-mode: both;
+}
+
+@keyframes coin-drop {
+  0% { transform: translate(0, 0) rotateY(0deg); opacity: 1; }
+  35% { transform: translate(calc(var(--dx) * 0.6), calc(var(--up) * -1)) rotateY(calc(var(--spin) * 0.4)); opacity: 1; }
+  100% { transform: translate(var(--dx), var(--fall)) rotateY(var(--spin)); opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .coin-drop {
+    animation-duration: 0.01s !important;
+  }
+}
