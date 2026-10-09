@@ -12,7 +12,6 @@ import MapBlock from '@/components/landing/MapBlock';
 import CasesSection from '@/components/landing/CasesSection';
 import LawyerBlock from '@/components/landing/LawyerBlock';
 import GlassTitle from '@/components/landing/GlassTitle';
-import HeroBridge from '@/components/landing/HeroBridge';
 import CasesTicker from '@/components/landing/CasesTicker';
 
 const stats = [
@@ -84,7 +83,6 @@ const Index = () => {
       <section className="relative overflow-hidden bg-navy-deep text-white grain">
         <div className="absolute -right-40 -top-40 h-96 w-96 rounded-full bg-navy-light/30 blur-3xl" />
         <div className="absolute -bottom-40 -left-40 h-96 w-96 rounded-full bg-gold/10 blur-3xl" />
-        <HeroBridge />
         <div className="container relative py-20 md:py-28">
           <div className="max-w-3xl">
             <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-gold animate-fade-in">
