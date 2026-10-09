@@ -14,7 +14,7 @@ import LawyerBlock from '@/components/landing/LawyerBlock';
 const stats = [
   { value: '250–700 тыс. ₽', label: 'Средний размер компенсации', icon: 'Banknote' },
   { value: '6–8 месяцев', label: 'Средний срок от осмотра до выплаты денег', icon: 'CalendarClock' },
-  { value: '14+ лет', label: 'Опыт работы с застройщиками, более 1000 выигранных дел', icon: 'TrendingUp' },
+  { value: 'Оплата по результату', label: 'Платите процент только после выплаты вам', icon: 'BadgeCheck' },
 ];
 
 const steps = [
@@ -27,7 +27,7 @@ const guarantees = [
   { icon: 'FileSignature', title: 'Всё в договоре', text: 'Сроки и порядок действий фиксируем письменно' },
   { icon: 'ClipboardCheck', title: 'Ежемесячные отчёты', text: 'Вы всегда знаете, на какой стадии ваше дело' },
   { icon: 'Eye', title: 'Полная прозрачность', text: 'Никаких скрытых платежей и мелкого шрифта' },
-  { icon: 'BadgeCheck', title: 'Оплата по результату', text: 'Платите процент только после выплаты вам' },
+  { icon: 'TrendingUp', title: '14+ лет', text: 'Опыт работы с застройщиками, более 1000 выигранных дел' },
 ];
 
 const faqs = [
