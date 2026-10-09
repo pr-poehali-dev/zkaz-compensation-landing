@@ -2,7 +2,7 @@ import Icon from '@/components/ui/icon';
 
 const managers = [
   {
-    photo: 'https://cdn.poehali.dev/projects/bc95d7d2-5577-46ab-81ff-ded0d2e4bfc4/bucket/2a81028a-bcde-4675-a74a-4948f1299401.jpeg',
+    photo: '/nikolay.jpg',
     name: 'Николай Коновалов',
     role: 'Менеджер по работе с клиентами',
     text: 'С первого звонка сопровождаю вас лично: собираю документы, слежу за сроками и держу в курсе каждого этапа.',
@@ -35,7 +35,7 @@ const LawyerBlock = () => {
             className="overflow-hidden rounded-2xl border border-border bg-card shadow-[0_20px_60px_-25px_hsl(var(--navy)/0.25)]"
           >
             <div className="relative overflow-hidden">
-              <img src={m.photo} alt={m.name} className="aspect-[3/4] w-full object-cover" />
+              <img src={m.photo} alt={m.name} className="aspect-[3/4] w-full object-cover object-top" />
               <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-navy-deep/90 to-transparent p-4">
                 <div className="flex items-center gap-1.5 text-gold">
                   <Icon name="Star" size={14} className="fill-gold" />
