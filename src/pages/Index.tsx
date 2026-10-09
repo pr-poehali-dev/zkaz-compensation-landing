@@ -18,12 +18,6 @@ const stats = [
   { value: 'Оплата по результату', label: 'Платите процент только после выплаты вам', icon: 'BadgeCheck' },
 ];
 
-const steps = [
-  { icon: 'Search', title: 'Консультация и осмотр', text: 'Бесплатно приезжаем и фиксируем дефекты' },
-  { icon: 'FileText', title: 'Экспертиза и претензия', text: 'Проводим за наш счёт, готовим документы' },
-  { icon: 'Wallet', title: 'Выплата от застройщика', text: 'Вы получаете деньги, мы — процент' },
-];
-
 const guarantees = [
   { icon: 'FileSignature', title: 'Всё в договоре', text: 'Сроки и порядок действий фиксируем письменно' },
   { icon: 'ClipboardCheck', title: 'Ежемесячные отчёты', text: 'Вы всегда знаете, на какой стадии ваше дело' },
@@ -148,29 +142,6 @@ const Index = () => {
 
       {/* Lawyer */}
       <LawyerBlock />
-
-      {/* How we work */}
-      <section id="how" className="container py-20 md:py-24">
-        <div className="mx-auto mb-14 max-w-2xl text-center">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-gold">Как мы работаем</p>
-          <h2 className="mt-3 font-display text-3xl font-extrabold text-navy md:text-4xl">Три шага до выплаты</h2>
-        </div>
-        <div className="grid gap-6 md:grid-cols-3">
-          {steps.map((s, i) => (
-            <div key={s.title} className="relative rounded-2xl border border-border bg-card p-6">
-              <span className="font-display text-5xl font-black text-navy/10">0{i + 1}</span>
-              <div className="mt-2 flex h-12 w-12 items-center justify-center rounded-xl bg-secondary text-navy">
-                <Icon name={s.icon} size={24} />
-              </div>
-              <h3 className="mt-4 font-display text-lg font-bold text-navy">{s.title}</h3>
-              <p className="mt-1 text-sm text-muted-foreground">{s.text}</p>
-              {i < steps.length - 1 && (
-                <Icon name="ArrowRight" size={20} className="absolute -right-5 top-1/2 hidden -translate-y-1/2 text-gold md:block" />
-              )}
-            </div>
-          ))}
-        </div>
-      </section>
 
       {/* Cases */}
       <CasesSection />

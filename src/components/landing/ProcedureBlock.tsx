@@ -29,7 +29,7 @@ const laws = [
 
 const ProcedureBlock = () => {
   return (
-    <section className="bg-secondary/50 py-20 md:py-24">
+    <section id="how" className="bg-secondary/50 py-20 md:py-24">
       <div className="container">
         <div className="mx-auto mb-12 max-w-2xl text-center">
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-gold">О процедуре</p>
