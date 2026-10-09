@@ -40,7 +40,7 @@ const DefectsBlock = () => {
       <div className="mt-8 flex flex-col items-center justify-between gap-4 rounded-2xl bg-navy-deep p-8 text-white sm:flex-row">
         <div>
           <p className="font-display text-xl font-bold">Не уверены, есть ли дефекты у вас?</p>
-          <p className="mt-1 text-sm text-white/70">Приедем, проверим бесплатно и честно скажем результат.</p>
+          <p className="mt-1 text-sm text-white/70">Дефекты есть в каждой квартире — их просто не видно без экспертного осмотра.</p>
         </div>
         <a
           href={`tel:${CONTACT_PHONE}`}
